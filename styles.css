@@ -158,6 +158,11 @@ html, body {
   text-align:center; color:#000;
   white-space:nowrap; line-height:1.4;
 }
+.footer-note {
+  font-size:11px; font-weight:100;
+  color:rgba(0,0,0,0.45);
+  letter-spacing:0.02em;
+}
 
 /* ────────────────────────────────────────────────────────
    NAV BUTTONS  (shared rules; position set per context)
