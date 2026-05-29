@@ -159,9 +159,9 @@ html, body {
   white-space:nowrap; line-height:1.4;
 }
 .footer-note {
-  left:40px; top:955px;
+  right:40px; top:955px;
   font-size:14px; font-weight:100;
-  text-align:left; color:#000;
+  text-align:right; color:#000;
   white-space:nowrap; line-height:1.4;
 }
 
