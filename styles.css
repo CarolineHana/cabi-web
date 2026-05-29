@@ -356,13 +356,13 @@ html, body {
 
 .modal-box {
   position:relative;
-  width:min(94vw,1320px);
-  height:min(92vh,860px);
+  width:min(63vw,884px);
+  height:min(62vh,576px);
   background:rgba(251,246,243,0.80);
   backdrop-filter:blur(24px) saturate(1.3);
   -webkit-backdrop-filter:blur(24px) saturate(1.3);
   border:0.5px solid rgba(102,34,47,0.10);
-  border-radius:24px;
+  border-radius:16px;
   overflow:hidden;
 }
 
@@ -370,48 +370,47 @@ html, body {
 #modal-inner {
   position:absolute;
   inset:0;
-  border-radius:24px;
+  border-radius:16px;
   background:rgba(225,164,109,0.13);
   display:flex;
   flex-direction:column;
   align-items:center;
-  /* push carousel below single-line title (26px + ~38px) + desc (~64px) */
   justify-content:flex-start;
-  padding-top:250px;
-  gap:10px;
+  padding-top:168px;
+  gap:7px;
   overflow:visible;
 }
 
 /* ── Project title — num + name on one line ── */
 .modal-title-area {
   position:absolute;
-  top:26px; left:72px;
+  top:17px; left:48px;
   display:flex;
   align-items:baseline;
-  gap:10px;
+  gap:7px;
   z-index:2;
   pointer-events:none;
 }
 .modal-num {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:200;
-  font-size:clamp(26px,1.8vw,36px);
+  font-size:clamp(17px,1.2vw,24px);
   color:rgba(102,34,47,0.55);
   line-height:1; letter-spacing:-0.01em;
 }
 .modal-name {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:600;
-  font-size:clamp(26px,1.8vw,36px);
+  font-size:clamp(17px,1.2vw,24px);
   color:var(--burgundy); letter-spacing:0.07em;
   line-height:1;
 }
 
 .modal-close {
-  position:absolute; top:22px; right:26px;
+  position:absolute; top:15px; right:17px;
   background:none; border:none;
   color:rgba(0,0,0,0.30);
-  font-size:20px; line-height:1;
+  font-size:14px; line-height:1;
   cursor:pointer; padding:0; z-index:100;
   transition:color 0.2s ease;
 }
@@ -424,21 +423,20 @@ html, body {
 
 #carousel-row {
   display:flex;
-  align-items:flex-start;   /* top-edges aligned — mirrors Figma layout */
-  gap:40px;
+  align-items:flex-start;
+  gap:27px;
   overflow:visible;
   position:relative;
   z-index:5;
 }
 
 /* ── Side stack containers ──
-   232px card + 4 × 40px offsets = 392px; overflow:visible so
-   the fanned deck can bleed outward without clipping. */
+   155px card + 4 × 27px offsets = 263px */
 #card-stack-left,
 #card-stack-right {
   position:relative;
-  width:392px;
-  height:490px;
+  width:263px;
+  height:328px;
   flex-shrink:0;
   overflow:visible;
 }
@@ -452,25 +450,20 @@ html, body {
   z-index:10;
 }
 
-/* ── Stack cards — SAME matrix on both left and right stacks.
-   matrix(0.91, 0.41, 0, 1, 0, 0): compresses x slightly and
-   shears y, making every card lean the same direction.
-   Opacity set inline by JS: front ~0.45 → back ~0.15.
-   ─────────────────────────────────────────────────────────── */
 .stack-card {
   position:absolute;
   top:0;
-  width:232px;
-  height:393px;
-  border-radius:14px;
+  width:155px;
+  height:263px;
+  border-radius:9px;
   overflow:hidden;
   background:#1a1a1a;
   cursor:pointer;
   transform:matrix(0.91,0.41,0,1,0,0);
   transition:opacity 0.22s ease;
   box-shadow:
-    0  4px 12px rgba(0,0,0,0.18),
-    0 12px 28px rgba(0,0,0,0.12);
+    0  3px  8px rgba(0,0,0,0.18),
+    0  8px 18px rgba(0,0,0,0.12);
 }
 .stack-card img,
 .stack-card video {
@@ -479,7 +472,6 @@ html, body {
 }
 .stack-card:hover { opacity:0.9 !important; }
 
-/* both sides use identical matrix — comment kept for clarity */
 /* .stack-card-left / .stack-card-right inherit from .stack-card */
 
 /* Video ▶ overlay on stack cards */
@@ -489,39 +481,36 @@ html, body {
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:26px;
+  font-size:18px;
   color:rgba(255,255,255,0.80);
   pointer-events:none;
   text-shadow:0 2px 8px rgba(0,0,0,0.5);
 }
 
-/* ── Featured card — natural aspect ratio, never cropped.
-   max-height/max-width constrain; width/height:auto preserves ratio.
-   ─────────────────────────────────────────────────────────────────── */
+/* ── Featured card — natural aspect ratio, never cropped. ── */
 .card-featured {
-  border-radius:14px;
+  border-radius:9px;
   overflow:hidden;
   cursor:pointer;
   line-height:0;
   box-shadow:
-    0 12px 32px rgba(0,0,0,0.24),
-    0 32px 64px rgba(0,0,0,0.16);
+    0  8px 22px rgba(0,0,0,0.24),
+    0 22px 44px rgba(0,0,0,0.16);
   animation:featuredIn 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;
 }
 .card-featured img,
 .card-featured video {
   display:block;
-  max-height:490px;
-  max-width:400px;
+  max-height:328px;
+  max-width:268px;
   width:auto;
   height:auto;
 }
 
-/* ── GIF override: fixed frame crops left/right excess width,
-   object-fit:cover keeps the centre of the animation in view. ── */
+/* ── GIF override ── */
 .card-featured.featured-gif {
-  width:340px;
-  height:440px;
+  width:228px;
+  height:295px;
 }
 .card-featured.featured-gif img {
   width:100%;
@@ -540,15 +529,15 @@ html, body {
 /* ── Dot scroller — subtle position indicator ── */
 #carousel-dots {
   display:flex;
-  gap:7px;
+  gap:5px;
   align-items:center;
   justify-content:center;
   z-index:2;
   margin-top:2px;
 }
 .carousel-dot {
-  width:5px;
-  height:5px;
+  width:4px;
+  height:4px;
   border-radius:50%;
   background:rgba(102,34,47,0.18);
   cursor:pointer;
@@ -566,15 +555,15 @@ html, body {
 /* ── Per-photo caption ── */
 #modal-caption {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-size:12px;
+  font-size:9px;
   font-weight:400;
   letter-spacing:0.07em;
   text-transform:uppercase;
   color:rgba(0,0,0,0.50);
   text-align:center;
-  width:800px;
-  min-height:20px;
-  line-height:20px;
+  width:536px;
+  min-height:13px;
+  line-height:13px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -584,16 +573,15 @@ html, body {
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
   position:absolute;
-  top:82px; left:75px;
-  width:800px;
+  top:55px; left:50px;
+  width:536px;
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:300;
-  font-size:clamp(15px,0.85vw,18px);
+  font-size:clamp(10px,0.57vw,12px);
   line-height:1.65;
   color:rgba(0,0,0,0.52);
   text-align:left;
   z-index:2;
-  /* hard cap at 3 lines */
   display:-webkit-box;
   -webkit-line-clamp:3;
   line-clamp:3;
