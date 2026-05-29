@@ -159,9 +159,10 @@ html, body {
   white-space:nowrap; line-height:1.4;
 }
 .footer-note {
-  font-size:11px; font-weight:100;
-  color:rgba(0,0,0,0.45);
-  letter-spacing:0.02em;
+  left:40px; top:955px;
+  font-size:14px; font-weight:100;
+  text-align:left; color:#000;
+  white-space:nowrap; line-height:1.4;
 }
 
 /* ────────────────────────────────────────────────────────
