@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabi &amp; Car&#x14d; Make Cool Things</title>
+  <link rel="stylesheet" href="cabi.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root">
+<div id="scene">
+
+  <!-- ══════════════════════════════════════════════
+       MAIN PAGE
+       ══════════════════════════════════════════════ -->
+  <div class="canvas">
+
+    <img src="assets/Title.png" alt="Gabi &amp; Car&#x14d; Make Cool Things" class="el title-img">
+    <img src="assets/cabi_main.png" alt="Gabi and Caro" class="el cabi-main">
+    <img src="assets/Caro_NameTag.png" alt="Caro" class="el caro-nametag">
+    <img src="assets/Gabi_NameTag.png" alt="Gabi" class="el gabi-nametag">
+
+    <a href="#" class="el img-link img-01" data-project="01"><img src="projects/icons/01.digiprod 3.png"    alt="Heatform"></a>
+    <a href="#" class="el img-link img-02" data-project="02"><img src="projects/icons/02.Gaia 2.png"        alt="Gaia"></a>
+    <a href="#" class="el img-link img-03" data-project="03"><img src="projects/icons/03.Nara 4.png"        alt="Nara"></a>
+    <a href="#" class="el img-link img-04" data-project="04"><img src="projects/icons/04.calm 3.png"        alt="Calm"></a>
+    <a href="#" class="el img-link img-05" data-project="05"><img src="projects/icons/05.RythmbBots 2.png"  alt="Rythmbots"></a>
+    <a href="#" class="el img-link img-06" data-project="06"><img src="projects/icons/06.scooper 1.png"     alt="Scooper"></a>
+    <a href="#" class="el img-link img-07" data-project="07"><img src="projects/icons/07.airlens 1.png"     alt="Airlens"></a>
+    <a href="#" class="el img-link img-08" data-project="08"><img src="projects/icons/08.flashlight 1.png"  alt="Lumini"></a>
+
+    <span class="el label lbl-01">01. HEATFORM</span>
+    <span class="el label lbl-02">02. GAIA</span>
+    <span class="el label lbl-03">03. NARA</span>
+    <span class="el label lbl-04">04. CALM</span>
+    <span class="el label lbl-05">05. RYTHMBOTS</span>
+    <span class="el label lbl-06">06. SCOOPER</span>
+    <span class="el label lbl-07">07. AIRLENS</span>
+    <span class="el label lbl-08">08. LUMINI</span>
+
+    <!-- Nav buttons -->
+    <div class="nav-buttons el">
+      <button class="nav-btn" id="btn-mission"><div class="btn-gradient"></div><span>MISSION</span></button>
+      <button class="nav-btn" id="btn-about"><div class="btn-gradient"></div><span>ABOUT US</span></button>
+      <button class="nav-btn" id="btn-proposal"><div class="btn-gradient"></div><span>PROPOSAL</span></button>
+    </div>
+
+    <!-- Footer — landing page only -->
+    <p class="main-footer">Caroline Hana and Gabriela Franco, 2026 Joint Portfolio<br>MDE Harvard University, Cambridge MA, USA</p>
+
+  </div><!-- /.canvas -->
+
+
+  <!-- ══════════════════════════════════════════════
+       SECTION PAGE — About Us / Mission / Proposal
+       ══════════════════════════════════════════════ -->
+  <div id="page-section">
+
+    <!-- Title fades in -->
+    <img src="assets/Title.png" alt="Gabi &amp; Car&#x14d; Make Cool Things" class="sec-title">
+
+    <!-- cabi_main slides from canvas-centre (725px) → left (94px) -->
+    <img src="assets/cabi_main.png" alt="Gabi and Caro" id="sec-cabi-main">
+    <img src="assets/Caro_NameTag.png" alt="Caro" class="sec-nametag caro-tag">
+    <img src="assets/Gabi_NameTag.png" alt="Gabi" class="sec-nametag gabi-tag">
+
+    <!-- Section heading -->
+    <div id="sec-heading">Our Mission</div>
+
+    <!-- Text column (right side) — scrolls behind glass bar -->
+    <div id="sec-text-container">
+      <div id="sec-text"></div>
+    </div>
+
+    <!-- Gradient fade into glass panel -->
+    <div class="text-fade-mask" id="text-fade"></div>
+
+    <!-- Glass panel — nav buttons + back button, centred under text column -->
+    <div id="sec-bottom-bar">
+      <div class="sec-nav-row">
+        <button class="nav-btn" id="sec-btn-mission"><div class="btn-gradient"></div><span>MISSION</span></button>
+        <button class="nav-btn" id="sec-btn-about"><div class="btn-gradient"></div><span>ABOUT US</span></button>
+        <button class="nav-btn" id="sec-btn-proposal"><div class="btn-gradient"></div><span>PROPOSAL</span></button>
+      </div>
+      <div id="btn-back">
+        <span class="back-arrow">&#x2190;</span>
+        <span>BACK TO MAIN PAGE</span>
+      </div>
+    </div>
+
+  </div><!-- /#page-section -->
+
+</div><!-- /scene -->
+</div><!-- /root -->
+
+
+<!-- ══════════════════════════════════════════════
+     PROJECT MODAL — outside #scene so position:fixed
+     covers the full viewport correctly
+     ══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal-box">
+
+    <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+
+    <!-- Peach-tinted inner area holds all project content -->
+    <div id="modal-inner">
+
+      <!-- Project number + name — top right -->
+      <div class="modal-title-area">
+        <div class="modal-num"  id="modalNum">01.</div>
+        <div class="modal-name" id="modalName">HEATFORM</div>
+      </div>
+
+      <!-- Three-column carousel: prev-stack | featured | next-stack -->
+      <div id="carousel-row">
+        <div id="card-stack-left"></div>
+        <div id="card-featured-slot"></div>
+        <div id="card-stack-right"></div>
+      </div>
+
+      <!-- Per-photo caption, centred under the featured image -->
+      <div id="modal-caption"></div>
+
+      <!-- Subtle dot scroller — position indicator -->
+      <div id="carousel-dots"></div>
+
+      <!-- Overall project description — bottom right -->
+      <p class="modal-desc" id="modalDesc"></p>
+
+    </div><!-- /#modal-inner -->
+
+  </div>
+</div><!-- /.modal-overlay -->
+
+
+  <script>
+  /* ── Viewport scaling ──────────────────────────────── */
+  (function () {
+    function scaleScene() {
+      var scene = document.getElementById('scene');
+      var sw = window.innerWidth, sh = window.innerHeight;
+      var scale = Math.min(sw / 1728, sh / 1117);
+      var ox = (sw - 1728 * scale) / 2;
+      var oy = (sh - 1117 * scale) / 2;
+      scene.style.transform = 'translate(' + ox + 'px,' + oy + 'px) scale(' + scale + ')';
+    }
+    window.addEventListener('resize', scaleScene);
+    scaleScene();
+  }());
+
+  /* ── App ─────────────────────────────────────────── */
+  (function () {
+    'use strict';
+
+    /* ── Section page content ────────────────────────────── */
+    var CONTENT = {
+      about: {
+        heading: 'Our Story',
+        text: 'We are currently pursuing the joint Master in Design Engineering program between the Harvard Graduate School of Design and the Harvard John A. Paulson School of Engineering and Applied Sciences, where we first met and quickly connected through a shared interest in experimental technology, creative hardware, and hands-on making. Our collaboration grew from a mutual curiosity for how electronics, fabrication, and speculative design can expand creative practice and make technology feel more tangible, playful, and human.\n\nComing from distinct but complementary backgrounds, we bring different perspectives into the same creative process. Caro’s expertise in hardware, embedded systems, and interactive prototyping intersects with Gabi’s background in design, linguistics, spatial storytelling, and manufacturing. Together, we combine technical experimentation with design-driven thinking, developing projects that merge robotics, wearables, physical computing, and speculative objects.\n\nOur process is grounded in rapid prototyping, iterative fabrication, and a shared enthusiasm for demystifying hardware. We approach technology not only as a functional tool, but also as a creative medium for storytelling, interaction, and exploration.\n\nOur Mission\n\nWe believe technology should be approachable, expressive, and fun. In a culture increasingly centered around optimization and productivity, we are interested in reclaiming experimentation, play, and creativity as equally valuable ways of engaging with hardware and computational tools. Through speculative objects, wearables, robotics, and DIY electronics, we aim to create projects that invite curiosity rather than intimidation.\n\nAs women working across engineering, design, and fabrication, we are also invested in challenging the misconception that technical rigor and aesthetics exist in opposition. Too often, engineering and creative practice are treated as separate worlds, when in reality the most meaningful work often emerges through their intersection. By openly sharing our process, documentation, and knowledge, we hope to encourage more people, especially women, to explore creative technology for themselves.'
+      },
+      mission: {
+        heading: 'Our Mission',
+        text: 'We believe technology should be approachable, expressive, and fun. In a culture increasingly centered around optimization and productivity, we are interested in reclaiming experimentation, play, and creativity as equally valuable ways of engaging with hardware and computational tools. Through speculative objects, wearables, robotics, and DIY electronics, we aim to create projects that invite curiosity rather than intimidation.\n\nAs women working across engineering, design, and fabrication, we are also invested in challenging the misconception that technical rigor and aesthetics exist in opposition. Too often, engineering and creative practice are treated as separate worlds, when in reality the most meaningful work often emerges through their intersection. By openly sharing our process, documentation, and knowledge, we hope to encourage more people, especially women, to explore creative technology for themselves and to see hardware not only as a tool for productivity, but also as a medium for expression, storytelling, and play.'
+      },
+      proposal: {
+        heading: 'Our Proposal',
+        text: 'Coming soon — stay tuned for our proposal.'
+      }
+    };
+
+    /* ── Project data ─────────────────────────────────────── */
+    var PROJECTS = [
+      {
+        key: '01', num: '01.', name: 'HEATFORM',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — A project exploring the intersection of heat and form. Details about concept, materials, and process will live here.'
+      },
+      {
+        key: '02', num: '02.', name: 'GAIA',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — An investigation into natural systems and ecological design. The full project write-up will appear here.'
+      },
+      {
+        key: '03', num: '03.', name: 'NARA',
+        photos: [
+          'projects/03-nara/ph.png',
+          'projects/03-nara/DSCF0893 1.png',
+          'projects/03-nara/DSCF0894 2.png',
+          'projects/03-nara/F89D059A-4E1D-47B9-A9F5-F217437AB6A6.MP4',
+          'projects/03-nara/Copy of exploded-view.gif',
+          'projects/03-nara/Frame.png',
+          'projects/03-nara/IMG_1681 2.png'
+        ],
+        captions: [
+          'IMG.1., FORM FACTOR EXPLORATION AND LANGUAGE/IMAGE SELECTION SPREAD',
+          'IMG.2., NARA PROTOTYPE 1. E-INK DISPLAY, BUTTONS AND ROTATING SCROLL',
+          'IMG.3., NARA PROTOTYPE 1. "BEHIND THE SCENES" ELECTRONICS',
+          'VID.1., NARA PCB BOARD TEST. PRESS PLAY',
+          'IMG.4., NARA FINAL HARDWARE STACK., EXPLODED VIEW DIAGRAM',
+          'IMG.5., NARA PCB INTEGRATED FORM FACTOR EXPLORATION., 3D PRINTED RESIN',
+          'IMG.6., NARA CUSTOM DESIGNED PCB'
+        ],
+        desc: 'A study in human-machine interaction and digital companionship. NARA is a handheld device featuring an e-ink display, custom PCB, and rotating scroll wheel for navigating curated text and image content.'
+      },
+      {
+        key: '04', num: '04.', name: 'CALM',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — Designing for stillness and intentional pause in a fast-paced world. Write-up to follow.'
+      },
+      {
+        key: '05', num: '05.', name: 'RYTHMBOTS',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — A robotic music-making project exploring rhythm, motion, and sound. Full write-up coming soon.'
+      },
+      {
+        key: '06', num: '06.', name: 'SCOOPER',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — A mechanical design project with a focus on precision and playfulness. More to come.'
+      },
+      {
+        key: '07', num: '07.', name: 'AIRLENS',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — A wearable optics project blending augmented vision with speculative design. Details ahead.'
+      },
+      {
+        key: '08', num: '08.', name: 'LUMINI',
+        photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
+        desc: 'Placeholder — Exploring soft light and material texture in an everyday object. Full details ahead.'
+      }
+    ];
+
+    var MAX_STACK_SHOW  = 5;    /* cards visible per side */
+    var STACK_OFFSET    = 40;   /* px offset matching Figma fan-deck spacing */
+    var currentPhotos   = [];
+    var currentCaptions = [];
+
+    /* ── Carousel state ───────────────────────────────────── */
+    var featuredIdx     = 0;
+    var isAnimating     = false;
+    var wheelAccum      = 0;
+    var wheelResetTimer = null;
+
+    /* ── Focus-card state ─────────────────────────────────── */
+    var focusCardEl   = null;   /* the floating .card-focus element */
+    var focusDimmerEl = null;   /* the .card-focus-dimmer element   */
+    var collapseCard  = null;   /* collapse function while expanded  */
+
+
+    /* ── DOM helpers ──────────────────────────────────────── */
+    function $id(id) { return document.getElementById(id); }
+
+    /* ── Media type helpers ──────────────────────────────── */
+    function isVideo(src) {
+      return /\.(mp4|webm|ogg|mov)$/i.test(src);
+    }
+    function isGif(src) {
+      return /\.gif$/i.test(src);
+    }
+
+    /* ── Build stack card media element ─────────────────── */
+    function makeMediaEl(src, featured) {
+      if (isVideo(src)) {
+        var vid = document.createElement('video');
+        vid.src = src;
+        if (featured) {
+          vid.controls = true;
+        } else {
+          vid.muted = true;
+          vid.loop  = true;
+          vid.setAttribute('playsinline', '');
+        }
+        vid.style.cssText = 'display:block;width:100%;height:100%;object-fit:cover;';
+        return vid;
+      } else {
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        return img;
+      }
+    }
+
+    /* ── Build carousel: left-stack | featured | right-stack ── */
+    function buildDeck() {
+      var n = currentPhotos.length;
+      if (n === 0) return;
+
+      /* ── 1. Featured photo (flat, centred) ──────────────── */
+      var slot = $id('card-featured-slot');
+      slot.innerHTML = '';
+      var fc = document.createElement('div');
+      var featuredSrc = currentPhotos[featuredIdx];
+      fc.className = 'card-featured' + (isGif(featuredSrc) ? ' featured-gif' : '');
+      var fMedia = makeMediaEl(featuredSrc, true);
+      fc.appendChild(fMedia);
+      if (!isVideo(featuredSrc)) {
+        fc.addEventListener('click', function (e) {
+          e.stopPropagation();
+          expandCard(fc, featuredSrc);
+        });
+      }
+      slot.appendChild(fc);
+
+      /* ── 2. Per-photo caption ────────────────────────────── */
+      $id('modal-caption').textContent =
+        (currentCaptions && currentCaptions[featuredIdx]) || '';
+
+      /* ── 3. Dot scroller ─────────────────────────────────── */
+      var dotsEl = $id('carousel-dots');
+      dotsEl.innerHTML = '';
+      for (var d = 0; d < n; d++) {
+        (function (dIdx) {
+          var dot = document.createElement('div');
+          dot.className = 'carousel-dot' + (dIdx === featuredIdx ? ' active' : '');
+          dot.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (!isAnimating && !focusCardEl) { featuredIdx = dIdx; buildDeck(); }
+          });
+          dotsEl.appendChild(dot);
+        })(d);
+      }
+
+      /* ── 4. Right stack — NEXT photos only (no wrap).
+         Front card at left:0, fans right. */
+      var rightEl = $id('card-stack-right');
+      rightEl.innerHTML = '';
+      for (var r = 1; featuredIdx + r < n && (r - 1) < MAX_STACK_SHOW; r++) {
+        (function (pIdx, pos) {
+          var card = document.createElement('div');
+          card.className = 'stack-card';
+          card.style.left    = (pos * STACK_OFFSET) + 'px';
+          card.style.zIndex  = MAX_STACK_SHOW - pos;
+          card.style.opacity = 0.8;
+          var media = makeMediaEl(currentPhotos[pIdx], false);
+          card.appendChild(media);
+          if (isVideo(currentPhotos[pIdx])) {
+            var ov = document.createElement('div');
+            ov.className = 'stack-video-overlay';
+            ov.textContent = '▶';
+            card.appendChild(ov);
+          }
+          card.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (!isAnimating && !focusCardEl) { featuredIdx = pIdx; buildDeck(); }
+          });
+          rightEl.appendChild(card);
+        }(featuredIdx + r, r - 1));
+      }
+
+      /* ── 5. Left stack — PREVIOUS photos only (no wrap).
+         Starts empty at index 0; builds as user scrolls forward.
+         Most-recent (pos=0) sits at BACK; older cards layer in front. */
+      var leftEl = $id('card-stack-left');
+      leftEl.innerHTML = '';
+      for (var l = 1; l <= featuredIdx && (l - 1) < MAX_STACK_SHOW; l++) {
+        (function (pIdx, pos) {
+          var card = document.createElement('div');
+          card.className = 'stack-card';
+          card.style.right   = (pos * STACK_OFFSET) + 'px';
+          card.style.zIndex  = pos + 1;   /* pos=0 → back, pos=4 → front */
+          card.style.opacity = 0.8;
+          var media = makeMediaEl(currentPhotos[pIdx], false);
+          card.appendChild(media);
+          if (isVideo(currentPhotos[pIdx])) {
+            var ov = document.createElement('div');
+            ov.className = 'stack-video-overlay';
+            ov.textContent = '▶';
+            card.appendChild(ov);
+          }
+          card.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (!isAnimating && !focusCardEl) { featuredIdx = pIdx; buildDeck(); }
+          });
+          leftEl.appendChild(card);
+        }(featuredIdx - l, l - 1));
+      }
+    }
+
+    /* ── Carousel navigation ──────────────────────────────── */
+    function advance() {
+      if (isAnimating || focusCardEl) return;
+      isAnimating = true;
+      featuredIdx = (featuredIdx + 1) % currentPhotos.length;
+      buildDeck();
+      setTimeout(function () { isAnimating = false; }, 260);
+    }
+    function retreat() {
+      if (isAnimating || focusCardEl) return;
+      isAnimating = true;
+      featuredIdx = (featuredIdx - 1 + currentPhotos.length) % currentPhotos.length;
+      buildDeck();
+      setTimeout(function () { isAnimating = false; }, 260);
+    }
+
+    /* ── Wheel handler: snap-scroll drives the carousel ────── */
+    function handleCarouselWheel(e) {
+      e.preventDefault();
+      /* prefer horizontal delta, fall back to vertical */
+      var delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      wheelAccum += delta;
+      /* reset accumulator if the gesture stalls */
+      clearTimeout(wheelResetTimer);
+      wheelResetTimer = setTimeout(function () { wheelAccum = 0; }, 400);
+      /* snap threshold: 40 px — fires once per deliberate flick */
+      if (wheelAccum >= 40)  { wheelAccum = 0; advance(); }
+      else if (wheelAccum <= -40) { wheelAccum = 0; retreat(); }
+    }
+
+    /* ── Update modal text ────────────────────────────────── */
+    function setInfo(proj) {
+      $id('modalNum').textContent  = proj.num;
+      $id('modalName').textContent = proj.name;
+      $id('modalDesc').textContent = proj.desc;
+    }
+
+    /* ── Expand card to flat centered view ────────────────── */
+    /*
+     * Strategy: append a fresh .card-focus to <body> (outside all
+     * 3D transform contexts) so position:fixed works against the
+     * true viewport. Seed it at the card's current bounding rect,
+     * then animate to center + flat + large.
+     */
+    function expandCard(cardEl, imgSrc) {
+      if (focusCardEl) return;   /* already expanded */
+
+      var rect  = cardEl.getBoundingClientRect();
+      var EASE  = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+
+      /* 1 — dimmer */
+      focusDimmerEl = document.createElement('div');
+      focusDimmerEl.className = 'card-focus-dimmer';
+      document.body.appendChild(focusDimmerEl);
+      void focusDimmerEl.offsetHeight;      /* force reflow before class add */
+      focusDimmerEl.classList.add('active');
+
+      /* 2 — focus card seeded at card's screen position */
+      focusCardEl = document.createElement('div');
+      focusCardEl.className = 'card-focus';
+      focusCardEl.style.left   = rect.left   + 'px';
+      focusCardEl.style.top    = rect.top    + 'px';
+      focusCardEl.style.width  = rect.width  + 'px';
+      focusCardEl.style.height = rect.height + 'px';
+
+      var mediaEl;
+      if (isVideo(imgSrc)) {
+        mediaEl = document.createElement('video');
+        mediaEl.src = imgSrc;
+        mediaEl.controls = true;
+        mediaEl.style.cssText = 'display:block;width:100%;height:100%;object-fit:cover;';
+      } else {
+        mediaEl = document.createElement('img');
+        mediaEl.src = imgSrc;
+      }
+      focusCardEl.appendChild(mediaEl);
+      document.body.appendChild(focusCardEl);
+
+      /* 3 — next two frames: paint first, then start transition */
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          var vw = window.innerWidth;
+          var vh = window.innerHeight;
+          var tw = Math.min(vw * 0.82, 900);
+          var th = Math.min(vh * 0.82, 660);
+          focusCardEl.style.transition = [
+            'left 0.44s '          + EASE,
+            'top 0.44s '           + EASE,
+            'width 0.44s '         + EASE,
+            'height 0.44s '        + EASE,
+            'border-radius 0.44s ease'
+          ].join(', ');
+          focusCardEl.style.left         = ((vw - tw) / 2) + 'px';
+          focusCardEl.style.top          = ((vh - th) / 2) + 'px';
+          focusCardEl.style.width        = tw + 'px';
+          focusCardEl.style.height       = th + 'px';
+          focusCardEl.style.borderRadius = '22px';
+        });
+      });
+
+      /* 4 — collapse function: animate back to original rect */
+      collapseCard = function () {
+        var fc = focusCardEl;
+        var fd = focusDimmerEl;
+        focusCardEl  = null;
+        focusDimmerEl = null;
+        collapseCard  = null;
+
+        fc.style.transition = [
+          'left 0.32s '          + EASE,
+          'top 0.32s '           + EASE,
+          'width 0.32s '         + EASE,
+          'height 0.32s '        + EASE,
+          'border-radius 0.32s ease'
+        ].join(', ');
+        fc.style.left         = rect.left   + 'px';
+        fc.style.top          = rect.top    + 'px';
+        fc.style.width        = rect.width  + 'px';
+        fc.style.height       = rect.height + 'px';
+        fc.style.borderRadius = '12px';
+        fd.classList.remove('active');
+
+        setTimeout(function () {
+          if (fc.parentNode) fc.parentNode.removeChild(fc);
+          if (fd.parentNode) fd.parentNode.removeChild(fd);
+        }, 360);
+      };
+
+      focusCardEl.addEventListener('click',   collapseCard);
+      focusDimmerEl.addEventListener('click', collapseCard);
+    }
+
+    /* ── Open modal ───────────────────────────────────────── */
+    function openModal(key) {
+      var proj = PROJECTS.find(function (p) { return p.key === key; });
+      if (!proj) return;
+      currentPhotos   = proj.photos;
+      currentCaptions = proj.captions || [];
+      featuredIdx     = 0;
+      isAnimating     = false;
+      wheelAccum      = 0;
+      buildDeck();
+      setInfo(proj);
+      $id('projectModal').classList.add('active');
+    }
+
+    /* ── Close modal ──────────────────────────────────────── */
+    function closeModal() {
+      if (collapseCard) collapseCard();   /* tear down any open focus card */
+      isAnimating = false;
+      wheelAccum  = 0;
+      $id('projectModal').classList.remove('active');
+    }
+
+    /* ── Section page functions ───────────────────────────── */
+    function goToSection(key) {
+      var data = CONTENT[key];
+      $id('sec-heading').textContent       = data.heading;
+      $id('sec-text').textContent          = data.text;
+      $id('sec-text-container').scrollTop  = 0;
+      $id('text-fade').style.opacity       = '1';
+
+      ['btn', 'sec-btn'].forEach(function (prefix) {
+        ['about', 'mission', 'proposal'].forEach(function (k) {
+          var btn = $id(prefix + '-' + k);
+          if (btn) btn.classList.toggle('active', k === key);
+        });
+      });
+
+      $id('page-section').classList.add('active');
+    }
+
+    function backToProjects() {
+      document.querySelectorAll('.nav-btn').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      $id('page-section').classList.remove('active');
+    }
+
+    /* ── Wire up events ───────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* project thumbnails on main canvas */
+      document.querySelectorAll('.img-link[data-project]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          openModal(link.dataset.project);
+        });
+      });
+
+      /* close button */
+      $id('modalClose').addEventListener('click', closeModal);
+
+      /* click on dark overlay → close modal */
+      $id('projectModal').addEventListener('click', function (e) {
+        if (e.target === $id('projectModal')) closeModal();
+      });
+
+      /* nav buttons — canvas bar + section bar */
+      ['about', 'mission', 'proposal'].forEach(function (key) {
+        var btn    = $id('btn-' + key);
+        var secBtn = $id('sec-btn-' + key);
+        if (btn)    btn.addEventListener('click',    function () { goToSection(key); });
+        if (secBtn) secBtn.addEventListener('click', function () { goToSection(key); });
+      });
+
+      /* back button */
+      $id('btn-back').addEventListener('click', backToProjects);
+
+      /* scroll → update bottom fade mask */
+      $id('sec-text-container').addEventListener('scroll', function () {
+        var c = $id('sec-text-container');
+        var atBottom = c.scrollTop + c.clientHeight >= c.scrollHeight - 10;
+        $id('text-fade').style.opacity = atBottom ? '0' : '1';
+      });
+
+      /* Escape: collapse focus card → close modal → close section */
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        if (collapseCard) {
+          collapseCard();
+        } else if ($id('projectModal').classList.contains('active')) {
+          closeModal();
+        } else {
+          backToProjects();
+        }
+      });
+
+      /* Wheel on modal → drive carousel (left/right scroll) */
+      $id('projectModal').addEventListener('wheel', handleCarouselWheel, { passive: false });
+    });
+
+  }());
+  </script>
+
+</body>
+</html>

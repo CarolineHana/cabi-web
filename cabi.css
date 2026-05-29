@@ -1,0 +1,627 @@
+/* ═══════════════════════════════════════════════════════
+   Gabi & Carō — Projects Portfolio
+   Design canvas: 1728 × 1117 px
+   scaleScene() in JS scales to fit any viewport.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  --burgundy: #66222F;
+  --mauve:    #CBA7C3;
+  --peach:    #E1A46D;
+  --cream:    #FBF6F3;
+  --w: 1728px;
+  --h: 1117px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  width:100%; height:100%;
+  overflow:hidden;
+  background:var(--cream);
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* ────────────────────────────────────────────────────────
+   VIEWPORT SCALE WRAPPER
+   scaleScene() sets transform: translate(ox,oy) scale(s)
+   on #scene so the 1728×1117 canvas always fits in view.
+   ──────────────────────────────────────────────────────── */
+
+#root {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  overflow:hidden;
+}
+
+#scene {
+  position:absolute;
+  width:var(--w); height:var(--h);
+  background:var(--cream);
+  transform-origin:top left;
+  overflow:hidden;
+}
+
+/* ────────────────────────────────────────────────────────
+   MAIN CANVAS
+   ──────────────────────────────────────────────────────── */
+
+.canvas {
+  position:absolute;
+  inset:0;
+  width:var(--w); height:var(--h);
+}
+
+.el { position:absolute; }
+
+/* Title: 1297×139 px  left:215  top:46 */
+.title-img {
+  width:1297px; height:auto;
+  left:215px; top:46px;
+  mix-blend-mode:multiply;
+}
+
+/* Central photo: 279×476 px  left:725  top:366 */
+.cabi-main {
+  width:279px; height:auto;
+  left:725px; top:366px;
+  mix-blend-mode:multiply;
+}
+
+/* Name tags */
+.caro-nametag { width:84px;  height:auto; left:733px; top:345px; mix-blend-mode:multiply; }
+.gabi-nametag { width:82px;  height:auto; left:889px; top:362px; mix-blend-mode:multiply; }
+
+/* ── Project image links ──────────────────────────── */
+
+.img-link { display:block; cursor:pointer; }
+.img-link img {
+  display:block; width:100%; height:100%;
+  object-fit:contain;
+  mix-blend-mode:multiply;      /* removes white bg on cream canvas */
+  /* two-layer shadow: close crisp layer + wide soft layer = elevation feel */
+  filter:
+    drop-shadow(0  6px  10px rgba(0,0,0,0.18))
+    drop-shadow(0 16px  32px rgba(0,0,0,0.12));
+  transition:transform 0.2s ease;
+}
+.img-link:hover img { transform:scale(1.1); }
+
+/* Positions mirror the Click_Projects Menu reference exactly */
+
+/* 01 HEATFORM  116×125 px  left:469  top:258  rot:-20.53° */
+.img-01 { width:196px; height:205px; left:439px;  top:210px; transform:rotate(0); }
+/* 02 GAIA      154×193 px  left:1051 top:252 */
+.img-02 { width:154px; height:193px; left:1051px; top:252px; }
+/* 03 NARA      217×218 px  left:194  top:359  rot:16.53° */
+.img-03 { width:217px; height:218px; left:194px;  top:359px; transform:rotate(0); }
+/* 04 CALM      245×273 px  left:1263 top:295  rot:-24.04° */
+.img-04 { width:245px; height:273px; left:1263px; top:295px; transform:rotate(-24.04deg); }
+/* 05 RYTHMBOTS  80×236 px  left:473  top:510  rot:-0.47° */
+.img-05 { width:150px;  height:306px; left:433px;  top:475px; transform:rotate(-0.47deg); }
+/* 06 SCOOPER   189×175 px  left:1074 top:559 */
+.img-06 { width:189px; height:175px; left:1074px; top:559px; }
+/* 07 AIRLENS   235×248 px  left:207  top:735  rot:-16.8° */
+.img-07 { width:235px; height:248px; left:207px;  top:735px; transform:rotate(0); }
+/* 08 LUMINI    239×240 px  left:1273 top:753  rot:35.29° */
+.img-08 { width:239px; height:240px; left:1333px; top:753px; transform:rotate(5.29deg); }
+
+/* ── Floating animation ───────────────────────────
+   Uses the standalone `translate` CSS property so it
+   composes with each image's `transform:rotate()` —
+   no rotation is lost. Staggered durations + negative
+   delays so every image bobs at its own pace.
+   ─────────────────────────────────────────────────── */
+@keyframes float-img {
+  0%, 100% { translate: 0    0px; }
+  50%       { translate: 0 -10px; }
+}
+
+.img-01 { animation: float-img 3.4s ease-in-out infinite  0.0s; }
+.img-02 { animation: float-img 3.8s ease-in-out infinite -0.7s; }
+.img-03 { animation: float-img 3.2s ease-in-out infinite -1.5s; }
+.img-04 { animation: float-img 4.0s ease-in-out infinite -0.3s; }
+.img-05 { animation: float-img 3.6s ease-in-out infinite -2.0s; }
+.img-06 { animation: float-img 3.4s ease-in-out infinite -1.2s; }
+.img-07 { animation: float-img 3.8s ease-in-out infinite -2.5s; }
+.img-08 { animation: float-img 3.2s ease-in-out infinite -0.8s; }
+
+/* ── Labels ──────────────────────────────────────── */
+
+.label {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:200; font-size:16px;
+  line-height:1; text-align:center;
+  color:#000; white-space:nowrap;
+  transform:translateX(-50%);   /* left value = horizontal centre of label */
+  pointer-events:none;
+}
+
+/* Label centres aligned to match reference layout */
+.lbl-01 { left:527px;  top:395px; }   /* below HEATFORM   */
+.lbl-02 { left:1128px; top:457px; }   /* below GAIA       */
+.lbl-03 { left:302px;  top:590px; }   /* below NARA       */
+.lbl-04 { left:1385px; top:580px; }   /* below CALM       */
+.lbl-05 { left:513px;  top:758px; }   /* below RYTHMBOTS  */
+.lbl-06 { left:1168px; top:746px; }   /* below SCOOPER    */
+.lbl-07 { left:324px;  top:995px; }   /* below AIRLENS    */
+.lbl-08 { left:1392px; top:905px; }   /* below LUMINI     */
+
+/* ── Landing-page footer (main page only) ─────────── */
+
+.main-footer {
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  top:955px;
+  font-size:14px; font-weight:100;
+  text-align:center; color:#000;
+  white-space:nowrap; line-height:1.4;
+}
+
+/* ────────────────────────────────────────────────────────
+   NAV BUTTONS  (shared rules; position set per context)
+   ──────────────────────────────────────────────────────── */
+
+/* Main canvas row — bottom-centre */
+.nav-buttons {
+  left:639px; top:861px;
+  display:flex; gap:20px;
+  z-index:30;
+}
+
+.nav-btn {
+  position:relative;
+  width:127px; height:36px;
+  border:0.5px solid var(--burgundy);
+  border-radius:18px;
+  background:var(--mauve);
+  overflow:hidden; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  padding:0; font:inherit; outline:none;
+  transition:background 0.4s ease;
+}
+.nav-btn .btn-gradient {
+  position:absolute; inset:0;
+  background:linear-gradient(90deg,var(--mauve),var(--peach));
+  opacity:0; filter:blur(3px);
+  transition:opacity 0.4s ease;
+  pointer-events:none;
+}
+.nav-btn:hover .btn-gradient { opacity:1; }
+.nav-btn.active               { background:var(--peach); }
+.nav-btn.active .btn-gradient { opacity:0; }
+
+.nav-btn span {
+  position:relative; z-index:1;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:20px; font-weight:400;
+  color:var(--burgundy); letter-spacing:0.01em;
+  white-space:nowrap;
+}
+
+/* ────────────────────────────────────────────────────────
+   SECTION PAGE  (About / Mission / Proposal)
+   position:absolute inside #scene → scales with it.
+   ──────────────────────────────────────────────────────── */
+
+#page-section {
+  position:absolute;
+  inset:0;
+  background:var(--cream);
+  opacity:0; pointer-events:none;
+  transition:opacity 0.3s ease;
+  z-index:1000;
+}
+#page-section.active { opacity:1; pointer-events:all; }
+
+/* Title — fades in */
+.sec-title {
+  position:absolute;
+  width:1297px; height:auto;
+  left:215px; top:46px;
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  opacity:0; transform:translateY(6px);
+  transition:opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+}
+#page-section.active .sec-title { opacity:1; transform:translateY(0); }
+
+/* cabi_main — slides from canvas centre (725 px) → section left (94 px) */
+#sec-cabi-main {
+  position:absolute;
+  left:725px; top:366px;
+  width:279px; height:auto;
+  mix-blend-mode:multiply;
+  transition:left 0.72s cubic-bezier(0.4,0,0.2,1) 0.12s;
+}
+#page-section.active #sec-cabi-main { left:94px; }
+
+/* Name tags — slide in sync with cabi_main */
+.sec-nametag {
+  position:absolute;
+  mix-blend-mode:multiply; height:auto;
+  transition:left 0.72s cubic-bezier(0.4,0,0.2,1) 0.12s;
+}
+.caro-tag { width:84px; left:733px; top:345px; }
+.gabi-tag { width:82px; left:889px; top:362px; }
+#page-section.active .caro-tag { left:102px; }
+#page-section.active .gabi-tag { left:258px; }
+
+/* Heading — fades + rises in */
+#sec-heading {
+  position:absolute;
+  left:499px; top:328px;
+  width:1013px;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:48px; font-weight:400;
+  color:var(--mauve); line-height:1.2;
+  opacity:0; transform:translateY(8px);
+  transition:opacity 0.5s ease 0.22s, transform 0.5s ease 0.22s;
+}
+#page-section.active #sec-heading { opacity:1; transform:translateY(0); }
+
+/* Scrollable text column */
+#sec-text-container {
+  position:absolute;
+  left:499px; top:403px;
+  width:1013px;
+  height:620px;          /* extends slightly into glass panel so text scrolls behind it */
+  overflow-y:auto; overflow-x:hidden;
+  scrollbar-width:none;
+  opacity:0; transform:translateY(8px);
+  transition:opacity 0.5s ease 0.28s, transform 0.5s ease 0.28s;
+}
+#sec-text-container::-webkit-scrollbar { display:none; }
+#page-section.active #sec-text-container { opacity:1; transform:translateY(0); }
+
+#sec-text {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:18px; font-weight:300;
+  line-height:35px; letter-spacing:0.36px;
+  text-transform:uppercase; color:#000;
+  white-space:pre-wrap;
+  padding-bottom:100px;  /* last lines scrollable above glass panel */
+}
+
+/*  */
+
+/* ── Glass panel — floating card below text, centred to text column ── */
+
+#sec-bottom-bar {
+  position:absolute;
+  left:499px;
+  width:1013px;
+  bottom:50px;
+  height:168px;
+  background:linear-gradient(to bottom,
+    rgba(251,246,243,0)    0%,
+    rgba(251,246,243,0.65) 50%,
+    rgba(251,246,243,1)    100%);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  display:flex; flex-direction:row;
+  align-items:center; justify-content:center;
+  border-radius: 10px;
+  gap:20px;
+  z-index:20;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+#page-section.active #sec-bottom-bar { opacity:1; }
+
+/* Nav buttons group */
+.sec-nav-row {
+  display:flex; align-items:center; gap:20px;
+}
+
+/* Back button — same height as nav buttons, width fits its text */
+#btn-back {
+  height:36px;
+  padding:0 18px;
+  border:0.5px solid var(--burgundy);
+  border-radius:18px;
+  background:transparent;
+  overflow:hidden; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  gap:8px;
+  transition:background 0.3s;
+  white-space:nowrap;
+}
+#btn-back:hover { background:rgba(203,167,195,0.18); }
+#btn-back .back-arrow { font-size:16px; color:var(--burgundy); }
+#btn-back > span:last-child {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:17px; font-weight:400; color:#000;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PROJECT MODAL
+   Modal lives OUTSIDE #scene so position:fixed covers
+   the full viewport correctly.
+   ═══════════════════════════════════════════════════════════ */
+
+.modal-overlay {
+  position:fixed; inset:0;
+  background:rgba(251,246,243,0.30);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  display:flex; align-items:center; justify-content:center;
+  z-index:9999;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.35s ease;
+}
+.modal-overlay.active { opacity:1; pointer-events:all; }
+
+.modal-box {
+  position:relative;
+  width:min(94vw,1320px);
+  height:min(92vh,860px);
+  background:rgba(251,246,243,0.80);
+  backdrop-filter:blur(24px) saturate(1.3);
+  -webkit-backdrop-filter:blur(24px) saturate(1.3);
+  border:0.5px solid rgba(102,34,47,0.10);
+  border-radius:24px;
+  overflow:hidden;
+}
+
+/* ── Peach-tinted inner area ── */
+#modal-inner {
+  position:absolute;
+  inset:0;
+  border-radius:24px;
+  background:rgba(225,164,109,0.13);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  /* push carousel below single-line title (26px + ~38px) + desc (~64px) */
+  justify-content:flex-start;
+  padding-top:250px;
+  gap:10px;
+  overflow:visible;
+}
+
+/* ── Project title — num + name on one line ── */
+.modal-title-area {
+  position:absolute;
+  top:26px; left:72px;
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  z-index:2;
+  pointer-events:none;
+}
+.modal-num {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:200;
+  font-size:clamp(26px,1.8vw,36px);
+  color:rgba(102,34,47,0.55);
+  line-height:1; letter-spacing:-0.01em;
+}
+.modal-name {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:600;
+  font-size:clamp(26px,1.8vw,36px);
+  color:var(--burgundy); letter-spacing:0.07em;
+  line-height:1;
+}
+
+.modal-close {
+  position:absolute; top:22px; right:26px;
+  background:none; border:none;
+  color:rgba(0,0,0,0.30);
+  font-size:20px; line-height:1;
+  cursor:pointer; padding:0; z-index:100;
+  transition:color 0.2s ease;
+}
+.modal-close:hover { color:rgba(0,0,0,0.75); }
+
+/* ──────────────────────────────────────────────────────────
+   THREE-COLUMN CAROUSEL
+   left-stack  |  featured  |  right-stack
+   ────────────────────────────────────────────────────────── */
+
+#carousel-row {
+  display:flex;
+  align-items:flex-start;   /* top-edges aligned — mirrors Figma layout */
+  gap:40px;
+  overflow:visible;
+  position:relative;
+  z-index:5;
+}
+
+/* ── Side stack containers ──
+   232px card + 4 × 40px offsets = 392px; overflow:visible so
+   the fanned deck can bleed outward without clipping. */
+#card-stack-left,
+#card-stack-right {
+  position:relative;
+  width:392px;
+  height:490px;
+  flex-shrink:0;
+  overflow:visible;
+}
+
+/* ── Featured card slot — auto-sizes to the image inside ── */
+#card-featured-slot {
+  flex-shrink:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  z-index:10;
+}
+
+/* ── Stack cards — SAME matrix on both left and right stacks.
+   matrix(0.91, 0.41, 0, 1, 0, 0): compresses x slightly and
+   shears y, making every card lean the same direction.
+   Opacity set inline by JS: front ~0.45 → back ~0.15.
+   ─────────────────────────────────────────────────────────── */
+.stack-card {
+  position:absolute;
+  top:0;
+  width:232px;
+  height:393px;
+  border-radius:14px;
+  overflow:hidden;
+  background:#1a1a1a;
+  cursor:pointer;
+  transform:matrix(0.91,0.41,0,1,0,0);
+  transition:opacity 0.22s ease;
+  box-shadow:
+    0  4px 12px rgba(0,0,0,0.18),
+    0 12px 28px rgba(0,0,0,0.12);
+}
+.stack-card img,
+.stack-card video {
+  display:block; width:100%; height:100%;
+  object-fit:cover;
+}
+.stack-card:hover { opacity:0.9 !important; }
+
+/* both sides use identical matrix — comment kept for clarity */
+/* .stack-card-left / .stack-card-right inherit from .stack-card */
+
+/* Video ▶ overlay on stack cards */
+.stack-video-overlay {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  color:rgba(255,255,255,0.80);
+  pointer-events:none;
+  text-shadow:0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ── Featured card — natural aspect ratio, never cropped.
+   max-height/max-width constrain; width/height:auto preserves ratio.
+   ─────────────────────────────────────────────────────────────────── */
+.card-featured {
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  line-height:0;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,0.24),
+    0 32px 64px rgba(0,0,0,0.16);
+  animation:featuredIn 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;
+}
+.card-featured img,
+.card-featured video {
+  display:block;
+  max-height:490px;
+  max-width:400px;
+  width:auto;
+  height:auto;
+}
+
+/* ── GIF override: fixed frame crops left/right excess width,
+   object-fit:cover keeps the centre of the animation in view. ── */
+.card-featured.featured-gif {
+  width:340px;
+  height:440px;
+}
+.card-featured.featured-gif img {
+  width:100%;
+  height:100%;
+  max-width:unset;
+  max-height:unset;
+  object-fit:cover;
+  object-position:center center;
+}
+
+@keyframes featuredIn {
+  from { opacity:0; transform:scale(0.93); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+/* ── Dot scroller — subtle position indicator ── */
+#carousel-dots {
+  display:flex;
+  gap:7px;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+  margin-top:2px;
+}
+.carousel-dot {
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(102,34,47,0.18);
+  cursor:pointer;
+  transition:background 0.25s ease, transform 0.25s ease;
+  flex-shrink:0;
+}
+.carousel-dot.active {
+  background:rgba(102,34,47,0.55);
+  transform:scale(1.5);
+}
+.carousel-dot:hover:not(.active) {
+  background:rgba(102,34,47,0.35);
+}
+
+/* ── Per-photo caption ── */
+#modal-caption {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:0.07em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,0.50);
+  text-align:center;
+  width:800px;
+  min-height:20px;
+  line-height:20px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  z-index:2;
+}
+
+/* ── Project description — directly below the one-line title ── */
+.modal-desc {
+  position:absolute;
+  top:82px; left:75px;
+  width:800px;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight:300;
+  font-size:clamp(15px,0.85vw,18px);
+  line-height:1.65;
+  color:rgba(0,0,0,0.52);
+  text-align:left;
+  z-index:2;
+  /* hard cap at 3 lines */
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FOCUS CARD  —  expanded single-card view
+   Appended to <body> by JS; lives outside all 3D contexts
+   so position:fixed works relative to the true viewport.
+   ═══════════════════════════════════════════════════════════ */
+
+.card-focus {
+  position:fixed; z-index:10001;
+  background:#FBF6F3; border-radius:14px;
+  overflow:hidden; cursor:pointer;
+  box-shadow:
+    0  30px  80px rgba(0,0,0,0.72),
+    0  60px 160px rgba(0,0,0,0.48);
+}
+.card-focus img { display:block; width:100%; height:100%; object-fit:cover; }
+
+.card-focus-dimmer {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.62);
+  z-index:10000; opacity:0; cursor:pointer;
+  transition:opacity 0.35s ease;
+}
+.card-focus-dimmer.active { opacity:1; }
