@@ -97,7 +97,7 @@ html, body {
 /* 03 NARA      217×218 px  left:194  top:359  rot:16.53° */
 .img-03 { width:217px; height:218px; left:194px;  top:359px; transform:rotate(0); }
 /* 04 CALM      245×273 px  left:1263 top:295  rot:-24.04° */
-.img-04 { width:245px; height:273px; left:1263px; top:295px; transform:rotate(-24.04deg); }
+.img-04 { width:245px; height:273px; left:1263px; top:275px; transform:rotate(-24.04deg); }
 /* 05 RYTHMBOTS  80×236 px  left:473  top:510  rot:-0.47° */
 .img-05 { width:150px;  height:306px; left:433px;  top:475px; transform:rotate(-0.47deg); }
 /* 06 SCOOPER   189×175 px  left:1074 top:559 */
