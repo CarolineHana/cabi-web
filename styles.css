@@ -368,7 +368,7 @@ html, body {
 .modal-box {
   position:relative;
   width:min(63vw,900px);
-  height:min(85vh,560px);
+  height:min(85vh,610px);
   background:rgba(251,246,243,0.80);
   backdrop-filter:blur(24px) saturate(1.3);
   -webkit-backdrop-filter:blur(24px) saturate(1.3);
@@ -433,7 +433,7 @@ html, body {
   overflow:visible;
   position:relative;
   z-index:5;
-  margin-top:30px;
+  margin-top:60px;
 }
 
 /* ── Side stack containers ──
@@ -441,8 +441,8 @@ html, body {
 #card-stack-left,
 #card-stack-right {
   position:relative;
-  width:263px;
-  height:328px;
+  width:271px;
+  height:344px;
   flex-shrink:0;
   overflow:visible;
 }
@@ -459,8 +459,8 @@ html, body {
 .stack-card {
   position:absolute;
   top:0;
-  width:155px;
-  height:263px;
+  width:163px;
+  height:276px;
   border-radius:9px;
   overflow:hidden;
   background:#1a1a1a;
@@ -507,10 +507,16 @@ html, body {
 .card-featured img,
 .card-featured video {
   display:block;
-  max-height:328px;
-  max-width:268px;
+  max-height:344px;
+  max-width:281px;
   width:auto;
   height:auto;
+}
+/* ── Per-project featured card size overrides ── */
+#projectModal[data-project="07"] .card-featured img,
+#projectModal[data-project="07"] .card-featured video {
+  max-height:378px;
+  max-width:309px;
 }
 
 /* ── GIF override ── */
@@ -582,7 +588,8 @@ html, body {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:300;
   font-size:clamp(14px,0.85vw,16px);
-  line-height:1.65;
+  line-height:1.5;
+  min-height:calc(1.5em * 3);
   color:rgba(0,0,0,0.52);
   text-align:center;
   z-index:2;

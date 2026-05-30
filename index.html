@@ -543,6 +543,7 @@
       wheelAccum      = 0;
       buildDeck();
       setInfo(proj);
+      $id('projectModal').dataset.project = key;
       $id('projectModal').classList.add('active');
     }
 
@@ -551,6 +552,7 @@
       if (collapseCard) collapseCard();   /* tear down any open focus card */
       isAnimating = false;
       wheelAccum  = 0;
+      delete $id('projectModal').dataset.project;
       $id('projectModal').classList.remove('active');
     }
 
