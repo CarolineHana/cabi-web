@@ -476,8 +476,15 @@
         requestAnimationFrame(function () {
           var vw = window.innerWidth;
           var vh = window.innerHeight;
-          var tw = Math.min(vw * 0.82, 900);
-          var th = Math.min(vh * 0.82, 660);
+          /* size card to image's natural aspect ratio so no bars appear */
+          var natW = (mediaEl.tagName === 'IMG' ? mediaEl.naturalWidth  : mediaEl.videoWidth)  || vw;
+          var natH = (mediaEl.tagName === 'IMG' ? mediaEl.naturalHeight : mediaEl.videoHeight) || vh;
+          var ratio = natW / natH || 1;
+          var maxW  = vw * 0.94;
+          var maxH  = vh * 0.92;
+          var tw, th;
+          if (maxW / ratio <= maxH) { tw = maxW; th = Math.round(maxW / ratio); }
+          else                      { th = maxH; tw = Math.round(maxH * ratio); }
           focusCardEl.style.transition = [
             'left 0.44s '          + EASE,
             'top 0.44s '           + EASE,
