@@ -108,11 +108,13 @@
     <!-- Peach-tinted inner area holds all project content -->
     <div id="modal-inner">
 
-      <!-- Project number + name — top right -->
+      <!-- Project title image — centred -->
       <div class="modal-title-area">
-        <div class="modal-num"  id="modalNum">01.</div>
-        <div class="modal-name" id="modalName">HEATFORM</div>
+        <img id="modalTitleImg" src="" alt="" class="modal-title-img" />
       </div>
+
+      <!-- Project description — centred below title -->
+      <p class="modal-desc" id="modalDesc"></p>
 
       <!-- Three-column carousel: prev-stack | featured | next-stack -->
       <div id="carousel-row">
@@ -126,9 +128,6 @@
 
       <!-- Subtle dot scroller — position indicator -->
       <div id="carousel-dots"></div>
-
-      <!-- Overall project description — bottom right -->
-      <p class="modal-desc" id="modalDesc"></p>
 
     </div><!-- /#modal-inner -->
 
@@ -175,16 +174,19 @@
     var PROJECTS = [
       {
         key: '01', num: '01.', name: 'HEATFORM',
+        titleImg: 'assets/Heatform_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — A project exploring the intersection of heat and form. Details about concept, materials, and process will live here.'
       },
       {
         key: '02', num: '02.', name: 'GAIA',
+        titleImg: 'assets/gaia_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — An investigation into natural systems and ecological design. The full project write-up will appear here.'
       },
       {
         key: '03', num: '03.', name: 'NARA',
+        titleImg: 'assets/Nara_title_orange 1.png',
         photos: [
           'projects/03-nara/ph.png',
           'projects/03-nara/DSCF0893 1.png',
@@ -207,26 +209,31 @@
       },
       {
         key: '04', num: '04.', name: 'CALM',
+        titleImg: 'assets/Codecalm_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — Designing for stillness and intentional pause in a fast-paced world. Write-up to follow.'
       },
       {
         key: '05', num: '05.', name: 'RHYTHM BOTS',
+        titleImg: 'assets/RhythmBots_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — A robotic music-making project exploring rhythm, motion, and sound. Full write-up coming soon.'
       },
       {
         key: '06', num: '06.', name: 'SCOOPER',
+        titleImg: 'assets/Scooper_title_orange 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — A mechanical design project with a focus on precision and playfulness. More to come.'
       },
       {
         key: '07', num: '07.', name: 'AIRLENS',
+        titleImg: 'assets/Airlens_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — A wearable optics project blending augmented vision with speculative design. Details ahead.'
       },
       {
         key: '08', num: '08.', name: 'LUMINI',
+        titleImg: 'assets/LuMini_title 1.png',
         photos: ['assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG', 'assets/placeholder2.JPG', 'assets/placeholder.JPG'],
         desc: 'Placeholder — Exploring soft light and material texture in an everyday object. Full details ahead.'
       }
@@ -410,8 +417,10 @@
 
     /* ── Update modal text ────────────────────────────────── */
     function setInfo(proj) {
-      $id('modalNum').textContent  = proj.num;
-      $id('modalName').textContent = proj.name;
+      var img = $id('modalTitleImg');
+      img.src = proj.titleImg || '';
+      img.alt = proj.name;
+      img.dataset.project = proj.key;
       $id('modalDesc').textContent = proj.desc;
     }
 

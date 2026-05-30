@@ -385,35 +385,28 @@ html, body {
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding-top:168px;
+  padding-top:24px;
   padding-bottom:28px;
-  gap:7px;
+  gap:10px;
   overflow:visible;
 }
 
-/* ── Project title — num + name on one line ── */
+/* ── Project title image — centred in flex flow ── */
 .modal-title-area {
-  position:absolute;
-  top:17px; left:48px;
   display:flex;
-  align-items:baseline;
-  gap:7px;
+  justify-content:center;
+  width:100%;
   z-index:2;
   pointer-events:none;
 }
-.modal-num {
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight:200;
-  font-size:clamp(24px,1.2vw,31px);
-  color:rgba(102,34,47,0.55);
-  line-height:1; letter-spacing:-0.01em;
+.modal-title-img {
+  height:45px;
+  width:auto;
+  display:block;
+  mix-blend-mode:multiply;
 }
-.modal-name {
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight:600;
-  font-size:clamp(24px,1.2vw,31px);
-  color:var(--burgundy); letter-spacing:0.07em;
-  line-height:1;
+.modal-title-img[data-project="05"] {
+  height:62px;
 }
 
 .modal-close {
@@ -438,6 +431,7 @@ html, body {
   overflow:visible;
   position:relative;
   z-index:5;
+  margin-top:30px;
 }
 
 /* ── Side stack containers ──
@@ -582,15 +576,13 @@ html, body {
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
-  position:absolute;
-  top:50px; left:50px;
-  width:606px;
+  width:min(86%,600px);
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:300;
-  font-size:clamp(14px,0.57vw,16px);
+  font-size:clamp(14px,0.85vw,16px);
   line-height:1.65;
   color:rgba(0,0,0,0.52);
-  text-align:left;
+  text-align:center;
   z-index:2;
   display:-webkit-box;
   -webkit-line-clamp:3;
