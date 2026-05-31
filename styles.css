@@ -726,7 +726,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 /* SoundForms (01) */
 #projectModal[data-project="01"] #modal-caption  { margin-top:10px; }
 #projectModal[data-project="01"] #carousel-dots  { margin-top:0px; }
-#projectModal[data-project="01"] .card-featured.featured-wide { margin-top:-10px; }
+#projectModal[data-project="01"] .card-featured.featured-wide { margin-top:-30px; }
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
