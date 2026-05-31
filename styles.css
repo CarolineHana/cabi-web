@@ -331,6 +331,15 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 .resume-btn:hover { background:#d4b8cc; }
 
+/* Mission page video */
+.mission-video {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  margin-bottom:1.4em;
+}
+
 /* Dashed divider between Caroline and Gabriela sections */
 .about-divider {
   border:none;
