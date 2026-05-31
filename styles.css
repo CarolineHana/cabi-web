@@ -291,7 +291,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #sec-text {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size:18px; font-weight:300;
-  line-height:35px; letter-spacing:0.36px;
+  line-height:25px; letter-spacing:0.36px;
   text-transform:uppercase; color:#000;
   white-space:normal;
   padding-top:4px;       /* keeps video top rounded corners inside container */
@@ -836,10 +836,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #page-section[data-section="proposal"] #proposal-inspo-top-fade { opacity: 1; }
 
-/* Body text in proposal uses tighter line-height than other sections */
-#page-section[data-section="proposal"] #sec-text {
-  line-height: 25px;
-}
+/* All section text uses 25px line-height (set as default on #sec-text above) */
 
 /* Proposal hook lines — mauve medium italic (matches parent uppercase) */
 .proposal-hook {
