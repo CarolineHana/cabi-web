@@ -763,13 +763,22 @@
 
       /* Escape: collapse focus card → close modal → close section */
       document.addEventListener('keydown', function (e) {
-        if (e.key !== 'Escape') return;
-        if (collapseCard) {
-          collapseCard();
-        } else if ($id('projectModal').classList.contains('active')) {
-          closeModal();
-        } else {
-          backToProjects();
+        if (e.key === 'Escape') {
+          if (collapseCard) {
+            collapseCard();
+          } else if ($id('projectModal').classList.contains('active')) {
+            closeModal();
+          } else {
+            backToProjects();
+          }
+        } else if ($id('projectModal').classList.contains('active') && !focusCardEl) {
+          if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            if (!isAnimating) { advanceCarousel(); }
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            if (!isAnimating) { retreatCarousel(); }
+          }
         }
       });
 
