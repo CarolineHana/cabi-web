@@ -762,12 +762,23 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
    PROPOSAL PAGE — inspo icons + DreamDeck title
    ──────────────────────────────────────────────────────── */
 
-/* Hide heading, cabi_main and nametags on proposal */
-#page-section[data-section="proposal"] #sec-heading,
+/* Hide cabi_main and nametags on proposal (heading stays visible as DreamDeck title) */
 #page-section[data-section="proposal"] #sec-cabi-main,
 #page-section[data-section="proposal"] .sec-nametag {
   opacity: 0;
   pointer-events: none;
+}
+
+/* DreamDeck static title — re-style the heading for proposal */
+#page-section[data-section="proposal"] #sec-heading {
+  font-family: 'PP Editorial Old', 'Playfair Display', Georgia, serif;
+  line-height: 1.3;
+  font-size: 42px;
+}
+
+/* Push scrollable text below the now-taller title */
+#page-section[data-section="proposal"] #sec-text-container {
+  top: 390px;
 }
 
 /* Rail — anchored top-left of page-section, shifts up on scroll */
@@ -799,16 +810,22 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-7 { width:196px; left:119px; top:1212px; transform:rotate(16.23deg); }
 .inspo-8 { width:198px; left:277px; top:1366px; }
 
-/* DreamDeck subtitle at top of proposal text */
-.proposal-dreamdeck-title {
-  font-family: 'PP Editorial Old', 'Playfair Display', Georgia, serif;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 72px;
-  color: var(--mauve);
-  text-transform: none;
-  margin: 0 0 0.6em;
+/* Top-fade mask — clips inspo icons at the top, matching the text start position */
+#proposal-inspo-top-fade {
+  position: absolute;
+  left: 0; top: 0;
+  width: 499px;
+  height: 410px;
+  background: linear-gradient(to bottom,
+    var(--cream) 0%,
+    var(--cream) 82%,
+    rgba(251,246,243,0) 100%);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
+#page-section[data-section="proposal"] #proposal-inspo-top-fade { opacity: 1; }
 
 /* Body text in proposal uses tighter line-height than other sections */
 #page-section[data-section="proposal"] #sec-text {
