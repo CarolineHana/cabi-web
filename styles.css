@@ -265,7 +265,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   left:499px; top:243px;
   width:1013px;
   font-family:'Playfair Display',Georgia,serif;
-  font-size:48px; font-weight:400;
+  font-size:48px; font-weight:400; font-style:italic;
   color:var(--mauve); line-height:1.2;
   opacity:0; transform:translateY(8px);
   transition:opacity 0.5s ease 0.22s, transform 0.5s ease 0.22s;
