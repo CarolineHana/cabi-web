@@ -293,6 +293,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   line-height:35px; letter-spacing:0.36px;
   text-transform:uppercase; color:#000;
   white-space:normal;
+  padding-top:4px;       /* keeps video top rounded corners inside container */
   padding-bottom:100px;  /* last lines scrollable above glass panel */
 }
 #sec-text p { margin:0 0 1.4em; }
@@ -338,7 +339,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   width:100%;
   height:auto;
   border-radius:8px;
-  margin-top:-5px;
+  margin-top:4px;
   margin-bottom:1.4em;
 }
 
