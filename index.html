@@ -64,15 +64,17 @@
     <img src="assets/Caro_NameTag.png" alt="Caro" class="sec-nametag caro-tag">
     <img src="assets/Gabi_NameTag.png" alt="Gabi" class="sec-nametag gabi-tag">
 
-    <!-- Proposal inspo icons — visible only when data-section="proposal" -->
-    <img src="assets/inspo_icon2 1.png" class="proposal-inspo inspo-1" alt="">
-    <img src="assets/inspo_icon3 1.png" class="proposal-inspo inspo-2" alt="">
-    <img src="assets/inspo_icon4 1.png" class="proposal-inspo inspo-3" alt="">
-    <img src="assets/inspo_icon5 1.png" class="proposal-inspo inspo-4" alt="">
-    <img src="assets/inspo_icon6 1.png" class="proposal-inspo inspo-5" alt="">
-    <img src="assets/inspo_icon7 1.png" class="proposal-inspo inspo-6" alt="">
-    <img src="assets/inspo_icon8 1.png" class="proposal-inspo inspo-7" alt="">
-    <img src="assets/inspo_icon9 1.png" class="proposal-inspo inspo-8" alt="">
+    <!-- Proposal inspo icons — visible + scroll-synced only when data-section="proposal" -->
+    <div id="proposal-inspo-rail">
+      <img src="assets/inspo_icon2 1.png" class="proposal-inspo inspo-1" alt="">
+      <img src="assets/inspo_icon3 1.png" class="proposal-inspo inspo-2" alt="">
+      <img src="assets/inspo_icon4 1.png" class="proposal-inspo inspo-3" alt="">
+      <img src="assets/inspo_icon5 1.png" class="proposal-inspo inspo-4" alt="">
+      <img src="assets/inspo_icon6 1.png" class="proposal-inspo inspo-5" alt="">
+      <img src="assets/inspo_icon7 1.png" class="proposal-inspo inspo-6" alt="">
+      <img src="assets/inspo_icon8 1.png" class="proposal-inspo inspo-7" alt="">
+      <img src="assets/inspo_icon9 1.png" class="proposal-inspo inspo-8" alt="">
+    </div>
 
     <!-- Section heading -->
     <div id="sec-heading">Our Mission</div>
@@ -683,6 +685,8 @@
       $id('page-section').classList.add('active');
       $id('page-section').setAttribute('data-section', key);
       document.body.classList.add('section-active');
+      var rail = $id('proposal-inspo-rail');
+      if (rail) rail.style.transform = 'translateY(0)';
     }
 
     function backToProjects() {
@@ -725,11 +729,13 @@
       /* back button */
       $id('btn-back').addEventListener('click', backToProjects);
 
-      /* scroll → update bottom fade mask */
+      /* scroll → update bottom fade mask + sync proposal inspo rail */
       $id('sec-text-container').addEventListener('scroll', function () {
         var c = $id('sec-text-container');
         var atBottom = c.scrollTop + c.clientHeight >= c.scrollHeight - 10;
         $id('text-fade').style.opacity = atBottom ? '0' : '1';
+        var rail = $id('proposal-inspo-rail');
+        if (rail) rail.style.transform = 'translateY(-' + c.scrollTop + 'px)';
       });
 
       /* Escape: collapse focus card → close modal → close section */

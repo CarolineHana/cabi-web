@@ -762,11 +762,27 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
    PROPOSAL PAGE — inspo icons + DreamDeck title
    ──────────────────────────────────────────────────────── */
 
+/* Hide heading, cabi_main and nametags on proposal */
+#page-section[data-section="proposal"] #sec-heading,
+#page-section[data-section="proposal"] #sec-cabi-main,
+#page-section[data-section="proposal"] .sec-nametag {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Rail — anchored top-left of page-section, shifts up on scroll */
+#proposal-inspo-rail {
+  position: absolute;
+  left: 0; top: 0;
+  width: 499px;
+  pointer-events: none;
+  will-change: transform;
+}
+
 /* All inspo icons hidden by default; shown only on proposal */
 .proposal-inspo {
   position: absolute;
   opacity: 0;
-  pointer-events: none;
   mix-blend-mode: multiply;
   transition: opacity 0.4s ease 0.15s;
   height: auto;
@@ -780,8 +796,8 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-4 { width:258px; left:190px; top:722px;  transform:rotate(-17.65deg); }
 .inspo-5 { width:149px; left:143px; top:962px;  transform:rotate(14.93deg); }
 .inspo-6 { width:223px; left:263px; top:1040px; transform:rotate(-7.44deg); }
-.inspo-7 { width:196px; left:119px; top:1117px; transform:rotate(16.23deg); } /* below canvas fold */
-.inspo-8 { width:198px; left:277px; top:1117px; } /* below canvas fold */
+.inspo-7 { width:196px; left:119px; top:1212px; transform:rotate(16.23deg); }
+.inspo-8 { width:198px; left:277px; top:1366px; }
 
 /* DreamDeck subtitle at top of proposal text */
 .proposal-dreamdeck-title {
