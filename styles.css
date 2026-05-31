@@ -803,15 +803,15 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-7 { width:196px; left:119px; top:1212px; transform:rotate(16.23deg); }
 .inspo-8 { width:198px; left:277px; top:1366px; }
 
-/* Top-fade mask — solid cream 0→375px (matching text box top), 20px fade below */
+/* Top-fade mask — starts at y:200px (below title image), solid cream → fade at y:375px */
 #proposal-inspo-top-fade {
   position: absolute;
-  left: 0; top: 0;
+  left: 0; top: 200px;
   width: 499px;
-  height: 400px;
+  height: 200px;
   background: linear-gradient(to bottom,
     var(--cream) 0%,
-    var(--cream) 93.75%,
+    var(--cream) 87.5%,
     rgba(251,246,243,0) 100%);
   pointer-events: none;
   z-index: 5;
