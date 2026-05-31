@@ -586,9 +586,11 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   max-width:309px;
 }
 #projectModal[data-project="04"] .card-featured,
-#projectModal[data-project="08"] .card-featured,
-#projectModal[data-project="06"] .card-featured {
+#projectModal[data-project="08"] .card-featured {
   margin-top:-40px;
+}
+#projectModal[data-project="06"] .card-featured {
+  margin-top:-30px;
 }
 #projectModal[data-project="07"] .modal-desc,
 #projectModal[data-project="04"] .modal-desc,
