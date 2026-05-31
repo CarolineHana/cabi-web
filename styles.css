@@ -840,3 +840,16 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #page-section[data-section="proposal"] #sec-text {
   line-height: 25px;
 }
+
+/* Proposal hook lines — mauve medium italic (matches parent uppercase) */
+.proposal-hook {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--mauve);
+}
+
+/* "How we'll build it" sub-heading — medium weight, black, extra spacing */
+.proposal-subhead {
+  font-weight: 500;
+  margin-top: 1.8em;
+}
