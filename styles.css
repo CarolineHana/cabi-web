@@ -359,7 +359,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   position:absolute;
   left:499px;
   width:1013px;
-  bottom:55px;
+  bottom:50px;
   height:168px;
   background:linear-gradient(to bottom,
     rgba(251,246,243,0)    0%,
