@@ -262,7 +262,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 /* Heading — fades + rises in */
 #sec-heading {
   position:absolute;
-  left:499px; top:258px;
+  left:499px; top:248px;
   width:1013px;
   font-family:'Playfair Display',Georgia,serif;
   font-size:48px; font-weight:400;
@@ -275,7 +275,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 /* Scrollable text column */
 #sec-text-container {
   position:absolute;
-  left:499px; top:333px;
+  left:499px; top:323px;
   width:1013px;
   height:620px;          /* extends slightly into glass panel so text scrolls behind it */
   overflow-y:auto; overflow-x:hidden;

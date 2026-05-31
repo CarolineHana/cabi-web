@@ -564,7 +564,13 @@
     }
 
     /* ── Section page functions ───────────────────────────── */
+    function stopSectionVideo() {
+      var vid = $id('sec-text').querySelector('video');
+      if (vid) { vid.pause(); vid.currentTime = 0; }
+    }
+
     function goToSection(key) {
+      stopSectionVideo();               /* pause any playing video before swapping content */
       var data = CONTENT[key];
       $id('sec-heading').textContent       = data.heading;
       $id('sec-text').innerHTML             = data.text;
@@ -583,6 +589,7 @@
     }
 
     function backToProjects() {
+      stopSectionVideo();               /* stop video when returning to main page */
       document.querySelectorAll('.nav-btn').forEach(function (b) {
         b.classList.remove('active');
       });
