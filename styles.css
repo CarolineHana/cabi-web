@@ -166,7 +166,9 @@ html, body {
   white-space:nowrap; line-height:1.4;
   z-index:50;
   pointer-events:none;
+  transition:opacity 0.3s ease;
 }
+body.section-active .footer-note { opacity:0; pointer-events:none; }
 
 /* ────────────────────────────────────────────────────────
    NAV BUTTONS  (shared rules; position set per context)
