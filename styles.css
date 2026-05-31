@@ -300,6 +300,16 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #sec-text strong { font-weight:700; display:block; margin-top:0.4em; }
 
 /* About page sub-heading images (About Caroline / About Gabriela) */
+/* Intro paragraph of About Us */
+.about-intro {
+  font-style: italic;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #CBA7C3;
+}
+
 .about-subheading-img {
   display:block;
   width:auto;
