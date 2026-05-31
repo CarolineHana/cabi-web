@@ -579,6 +579,9 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   max-height:378px;
   max-width:309px;
 }
+#projectModal[data-project="04"] .card-featured {
+  margin-top:-20px;
+}
 #projectModal[data-project="07"] .modal-desc,
 #projectModal[data-project="04"] .modal-desc {
   -webkit-line-clamp:4;
