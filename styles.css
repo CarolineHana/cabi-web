@@ -435,8 +435,8 @@ html, body {
   z-index:5;
   margin-top:60px;
 }
-#projectModal[data-project="03"] #carousel-row { margin-top:50px; }
-#projectModal[data-project="07"] #carousel-row { margin-top:40px; }
+#projectModal[data-project="03"] #carousel-row { margin-top:40px; }
+#projectModal[data-project="07"] #carousel-row { margin-top:30px; }
 
 /* ── Side stack containers ──
    155px card + 4 × 27px offsets = 263px */
@@ -554,7 +554,8 @@ html, body {
   z-index:2;
   margin-top:2px;
 }
-#projectModal[data-project="03"] #carousel-dots { margin-top:-3px; }
+#projectModal[data-project="03"] #carousel-dots { margin-top:-13px; }
+#projectModal[data-project="03"] #modal-caption  { margin-top:0px; }
 .carousel-dot {
   width:4px;
   height:4px;
@@ -592,7 +593,8 @@ html, body {
   overflow:hidden;
   z-index:2;
 }
-#projectModal[data-project="07"] #modal-caption { margin-top:-10px; }
+#projectModal[data-project="07"] #modal-caption  { margin-top:-20px; }
+#projectModal[data-project="07"] #carousel-dots  { margin-top:0px; }
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
