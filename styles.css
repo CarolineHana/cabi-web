@@ -757,3 +757,44 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   transition:opacity 0.35s ease;
 }
 .card-focus-dimmer.active { opacity:1; }
+
+/* ────────────────────────────────────────────────────────
+   PROPOSAL PAGE — inspo icons + DreamDeck title
+   ──────────────────────────────────────────────────────── */
+
+/* All inspo icons hidden by default; shown only on proposal */
+.proposal-inspo {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  transition: opacity 0.4s ease 0.15s;
+  height: auto;
+}
+#page-section[data-section="proposal"] .proposal-inspo { opacity: 1; }
+
+/* Individual icon positions (from Figma) */
+.inspo-1 { width:200px; left:146px; top:364px; }
+.inspo-2 { width:215px; left:260px; top:432px; }
+.inspo-3 { width:209px; left:129px; top:593px; }
+.inspo-4 { width:258px; left:190px; top:722px;  transform:rotate(-17.65deg); }
+.inspo-5 { width:149px; left:143px; top:962px;  transform:rotate(14.93deg); }
+.inspo-6 { width:223px; left:263px; top:1040px; transform:rotate(-7.44deg); }
+.inspo-7 { width:196px; left:119px; top:1117px; transform:rotate(16.23deg); } /* below canvas fold */
+.inspo-8 { width:198px; left:277px; top:1117px; } /* below canvas fold */
+
+/* DreamDeck subtitle at top of proposal text */
+.proposal-dreamdeck-title {
+  font-family: 'PP Editorial Old', 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 72px;
+  color: var(--mauve);
+  text-transform: none;
+  margin: 0 0 0.6em;
+}
+
+/* Body text in proposal uses tighter line-height than other sections */
+#page-section[data-section="proposal"] #sec-text {
+  line-height: 25px;
+}
