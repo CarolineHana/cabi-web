@@ -659,7 +659,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #projectModal[data-project="07"] #modal-caption  { margin-top:-20px; }
 #projectModal[data-project="07"] #carousel-dots  { margin-top:0px; }
 #projectModal[data-project="04"] #modal-caption  { margin-top:-10px; }
-#projectModal[data-project="04"] #carousel-dots  { margin-top:10px; }
+#projectModal[data-project="04"] #carousel-dots  { margin-top:0px; }
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
