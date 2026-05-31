@@ -494,7 +494,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #projectModal[data-project="03"] #carousel-row { margin-top:40px; }
 #projectModal[data-project="07"] #carousel-row { margin-top:30px; }
 #projectModal[data-project="04"] #carousel-row { margin-top:30px; }
-#projectModal[data-project="08"] #carousel-row { margin-top:30px; }
+#projectModal[data-project="08"] #carousel-row { margin-top:10px; }
 
 /* ── Side stack containers ──
    155px card + 4 × 27px offsets = 263px */
