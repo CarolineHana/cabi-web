@@ -808,15 +808,15 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #page-section[data-section="proposal"] .proposal-inspo { opacity: 1; }
 
-/* Individual icon positions (from Figma) */
-.inspo-1 { width:200px; left:146px; top:364px; }
-.inspo-2 { width:215px; left:260px; top:432px; }
-.inspo-3 { width:209px; left:129px; top:593px; }
-.inspo-4 { width:258px; left:190px; top:722px;  transform:rotate(-17.65deg); }
-.inspo-5 { width:149px; left:143px; top:962px;  transform:rotate(14.93deg); }
-.inspo-6 { width:223px; left:263px; top:1040px; transform:rotate(-7.44deg); }
-.inspo-7 { width:196px; left:119px; top:1212px; transform:rotate(16.23deg); }
-.inspo-8 { width:198px; left:277px; top:1366px; }
+/* Individual icon positions (all shifted -20px left; inspo-1 extra -20px = -40px total) */
+.inspo-1 { width:200px; left:106px; top:364px; }
+.inspo-2 { width:215px; left:240px; top:432px; }
+.inspo-3 { width:209px; left:109px; top:593px; }
+.inspo-4 { width:258px; left:170px; top:722px;  transform:rotate(-17.65deg); }
+.inspo-5 { width:149px; left:123px; top:962px;  transform:rotate(14.93deg); }
+.inspo-6 { width:223px; left:243px; top:1040px; transform:rotate(-7.44deg); }
+.inspo-7 { width:196px; left:99px;  top:1212px; transform:rotate(16.23deg); }
+.inspo-8 { width:198px; left:257px; top:1366px; }
 
 /* Top-fade cream overlay — kept for belt-and-suspenders cover of area above clip */
 #proposal-inspo-top-fade {
