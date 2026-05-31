@@ -349,7 +349,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   color:var(--mauve);
   line-height:1.2;
   text-transform:none;
-  margin:1.8em 0 0.44em;
+  margin:0 0 25px;
 }
 
 /* Resume button inside About scrollable text */
@@ -387,13 +387,6 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 
 /* Dashed divider between Caroline and Gabriela sections */
-.about-divider {
-  border:none;
-  border-top:1px dashed #000;
-  width:100%;
-  margin:2em 0 2.4em;
-}
-
 /*  */
 
 /* ── Glass panel — floating card below text, centred to text column ── */
