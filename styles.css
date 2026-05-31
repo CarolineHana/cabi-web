@@ -269,6 +269,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   color:var(--mauve); line-height:1.2;
   opacity:0; transform:translateY(8px);
   transition:opacity 0.5s ease 0.22s, transform 0.5s ease 0.22s;
+  z-index: 12;
 }
 #page-section.active #sec-heading { opacity:1; transform:translateY(0); }
 
@@ -774,13 +775,14 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   top: 375px;
 }
 
-/* Rail — anchored top-left of page-section, shifts up on scroll */
+/* Rail — anchored top-left of page-section, shifts up on scroll; sits below heading */
 #proposal-inspo-rail {
   position: absolute;
   left: 0; top: 0;
   width: 499px;
   pointer-events: none;
   will-change: transform;
+  z-index: 1;
 }
 
 /* All inspo icons hidden by default; shown only on proposal */
