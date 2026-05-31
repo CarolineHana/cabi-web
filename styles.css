@@ -291,7 +291,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #sec-text {
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size:18px; font-weight:300;
-  line-height:25px; letter-spacing:0.36px;
+  line-height:35px; letter-spacing:0.36px;
   text-transform:uppercase; color:#000;
   white-space:normal;
   padding-top:4px;       /* keeps video top rounded corners inside container */
@@ -318,19 +318,19 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   height: 12px;
 }
 
-/* Body text — light, upright, black, 25px line-height */
+/* Body text — light, upright, black, 35px line-height */
 .about-intro-body {
   font-weight: 300;
   font-style: normal;
   color: #000;
-  line-height: 25px;
+  line-height: 35px;
 }
 
-/* "Read on…" closing line — light italic, black, 25px line-height */
+/* "Read on…" closing line — light italic, black, 35px line-height */
 .about-intro-footer {
   font-weight: 300;
   color: #000;
-  line-height: 25px;
+  line-height: 35px;
 }
 
 .about-subheading-img {
