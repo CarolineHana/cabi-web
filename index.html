@@ -391,6 +391,16 @@
       fc.className = 'card-featured' + (isGif(featuredSrc) ? ' featured-gif' : '');
       var fMedia = makeMediaEl(featuredSrc, true);
       fc.appendChild(fMedia);
+      /* Mark videos and landscape images so per-project CSS can target them */
+      if (isVideo(featuredSrc)) {
+        fc.classList.add('featured-wide');
+      } else if (!isGif(featuredSrc)) {
+        var _checkWide = function () {
+          if (fMedia.naturalWidth > fMedia.naturalHeight) fc.classList.add('featured-wide');
+        };
+        if (fMedia.naturalWidth > 0) { _checkWide(); }
+        else { fMedia.addEventListener('load', _checkWide); }
+      }
       if (!isVideo(featuredSrc)) {
         fc.addEventListener('click', function (e) {
           e.stopPropagation();
