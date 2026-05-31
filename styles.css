@@ -794,21 +794,21 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 /* Clip container — matches text box top (y:375px); hard-clips + soft 30px fade at top */
 #proposal-inspo-clip {
   position: absolute;
-  left: 0; top: 375px;
+  left: 0; top: 243px;
   width: 499px;
-  height: 742px;           /* 1117 - 375 */
+  height: 874px;           /* 1117 - 243 */
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  /* Short soft fade at the clip boundary (~30px) */
+  /* Short soft fade at the clip boundary (~35px) */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 4%);
   mask-image:         linear-gradient(to bottom, transparent 0%, black 4%);
 }
 
-/* Rail — offset by -375px so icon top values stay relative to page-section */
+/* Rail — offset by -243px so icon top values stay relative to page-section */
 #proposal-inspo-rail {
   position: absolute;
-  left: 0; top: -375px;
+  left: 0; top: -243px;
   width: 499px;
   pointer-events: none;
   will-change: transform;
@@ -834,19 +834,21 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-7 { width:196px; left:79px;  top:1272px; transform:rotate(16.23deg); }
 .inspo-8 { width:198px; left:237px; top:1426px; }
 
-/* Top-fade cream overlay — kept for belt-and-suspenders cover of area above clip */
+/* Bottom glass overlay for the left inspo column — mirrors #sec-bottom-bar */
 #proposal-inspo-top-fade {
-  display: none;   /* clip container + mask handles this now */
   position: absolute;
-  left: 0; top: 200px;
+  left: 0;
+  bottom: 50px;
   width: 499px;
-  height: 200px;
+  height: 168px;
   background: linear-gradient(to bottom,
-    var(--cream) 0%,
-    var(--cream) 87.5%,
-    rgba(251,246,243,0) 100%);
+    rgba(251,246,243,0)    0%,
+    rgba(251,246,243,0.65) 50%,
+    rgba(251,246,243,1)    100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   pointer-events: none;
-  z-index: 5;
+  z-index: 22;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
