@@ -307,6 +307,38 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   margin:1.8em 0 0.9em;
 }
 
+/* Resume button inside About scrollable text */
+.resume-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  width:152px;
+  height:36px;
+  background:var(--mauve);
+  border:0.5px solid var(--burgundy);
+  border-radius:18px;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:20px;
+  font-weight:400;
+  color:var(--burgundy);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  margin:0.6em 0 1.4em;
+  cursor:pointer;
+  transition:background 0.25s ease;
+}
+.resume-btn:hover { background:#d4b8cc; }
+
+/* Dashed divider between Caroline and Gabriela sections */
+.about-divider {
+  border:none;
+  border-top:1px dashed #000;
+  width:100%;
+  margin:2em 0 2.4em;
+}
+
 /*  */
 
 /* ── Glass panel — floating card below text, centred to text column ── */
