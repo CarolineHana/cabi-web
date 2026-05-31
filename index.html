@@ -774,10 +774,10 @@
         } else if ($id('projectModal').classList.contains('active') && !focusCardEl) {
           if (e.key === 'ArrowRight') {
             e.preventDefault();
-            if (!isAnimating) { advanceCarousel(); }
+            advance();
           } else if (e.key === 'ArrowLeft') {
             e.preventDefault();
-            if (!isAnimating) { retreatCarousel(); }
+            retreat();
           }
         }
       });
