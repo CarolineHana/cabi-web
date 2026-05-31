@@ -340,7 +340,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   line-height: 35px;
 }
 
-.about-subheading {
+#sec-text p.about-subheading {
   display:block;
   font-family:'PP Editorial Old',Georgia,serif;
   font-size:48px;
@@ -349,7 +349,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   color:var(--mauve);
   line-height:1.2;
   text-transform:none;
-  margin:1.8em 0 0.9em;
+  margin:1.8em 0 0.44em;
 }
 
 /* Resume button inside About scrollable text */
