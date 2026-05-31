@@ -761,8 +761,8 @@
         if (rail) rail.style.transform = 'translateY(-' + c.scrollTop + 'px)';
       });
 
-      /* wheel on inspo image side → forward to text container so scroll works anywhere on proposal */
-      $id('proposal-inspo-clip').addEventListener('wheel', function (e) {
+      /* wheel anywhere on section page → drive text container so the full page is scrollable */
+      $id('page-section').addEventListener('wheel', function (e) {
         e.preventDefault();
         $id('sec-text-container').scrollTop += e.deltaY;
       }, { passive: false });
