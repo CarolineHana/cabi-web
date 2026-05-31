@@ -318,17 +318,19 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   height: 12px;
 }
 
-/* Body text — light, upright, black */
+/* Body text — light, upright, black, 25px line-height */
 .about-intro-body {
   font-weight: 300;
   font-style: normal;
   color: #000;
+  line-height: 25px;
 }
 
-/* "Read on…" closing line — light italic, black */
+/* "Read on…" closing line — light italic, black, 25px line-height */
 .about-intro-footer {
   font-weight: 300;
   color: #000;
+  line-height: 25px;
 }
 
 .about-subheading-img {
