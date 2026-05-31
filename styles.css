@@ -794,7 +794,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 
 /* Push scrollable text below the 2-line DreamDeck title (same gap as "Our Story") */
 #page-section[data-section="proposal"] #sec-text-container {
-  top: 375px;
+  top: 318px;
 }
 
 /* Clip container — matches text box top (y:375px); hard-clips + soft 30px fade at top */
