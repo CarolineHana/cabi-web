@@ -493,6 +493,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #projectModal[data-project="03"] #carousel-row { margin-top:40px; }
 #projectModal[data-project="07"] #carousel-row { margin-top:30px; }
+#projectModal[data-project="04"] #carousel-row { margin-top:30px; }
 
 /* ── Side stack containers ──
    155px card + 4 × 27px offsets = 263px */
@@ -572,11 +573,14 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 /* ── Per-project featured card size overrides ── */
 #projectModal[data-project="07"] .card-featured img,
-#projectModal[data-project="07"] .card-featured video {
+#projectModal[data-project="07"] .card-featured video,
+#projectModal[data-project="04"] .card-featured img,
+#projectModal[data-project="04"] .card-featured video {
   max-height:378px;
   max-width:309px;
 }
-#projectModal[data-project="07"] .modal-desc {
+#projectModal[data-project="07"] .modal-desc,
+#projectModal[data-project="04"] .modal-desc {
   -webkit-line-clamp:4;
   line-clamp:4;
   min-height:calc(1.5em * 4);
@@ -651,6 +655,8 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #projectModal[data-project="07"] #modal-caption  { margin-top:-20px; }
 #projectModal[data-project="07"] #carousel-dots  { margin-top:0px; }
+#projectModal[data-project="04"] #modal-caption  { margin-top:-20px; }
+#projectModal[data-project="04"] #carousel-dots  { margin-top:0px; }
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
