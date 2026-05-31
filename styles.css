@@ -775,24 +775,24 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   top: 375px;
 }
 
-/* Clip container — hard-clips icons at y:200px + soft fade via mask; sits below heading */
+/* Clip container — matches text box top (y:375px); hard-clips + soft 30px fade at top */
 #proposal-inspo-clip {
   position: absolute;
-  left: 0; top: 200px;
+  left: 0; top: 375px;
   width: 499px;
-  height: 917px;           /* 1117 - 200 */
+  height: 742px;           /* 1117 - 375 */
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  /* Soft fade: transparent at top → fully opaque ~140px in (before first icon at y:364) */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
-  mask-image:         linear-gradient(to bottom, transparent 0%, black 15%);
+  /* Short soft fade at the clip boundary (~30px) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 4%);
+  mask-image:         linear-gradient(to bottom, transparent 0%, black 4%);
 }
 
-/* Rail — offset by -200px to keep icon top values relative to page-section */
+/* Rail — offset by -375px so icon top values stay relative to page-section */
 #proposal-inspo-rail {
   position: absolute;
-  left: 0; top: -200px;
+  left: 0; top: -375px;
   width: 499px;
   pointer-events: none;
   will-change: transform;
