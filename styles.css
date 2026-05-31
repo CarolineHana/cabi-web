@@ -743,11 +743,12 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   width:min(86%,1000px);
   font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight:300;
-  font-size:clamp(14px,0.85vw,16px);
+  font-size:clamp(10px,0.85vw,12px);
   line-height:1.5;
   min-height:calc(1.5em * 3);
   color:rgba(0,0,0,0.52);
   text-align:center;
+  text-transform:uppercase;
   z-index:2;
   display:-webkit-box;
   -webkit-line-clamp:3;
