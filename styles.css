@@ -775,14 +775,27 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   top: 375px;
 }
 
-/* Rail — anchored top-left of page-section, shifts up on scroll; sits below heading */
+/* Clip container — hard-clips icons at y:200px + soft fade via mask; sits below heading */
+#proposal-inspo-clip {
+  position: absolute;
+  left: 0; top: 200px;
+  width: 499px;
+  height: 917px;           /* 1117 - 200 */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  /* Soft fade: transparent at top → fully opaque ~140px in (before first icon at y:364) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+  mask-image:         linear-gradient(to bottom, transparent 0%, black 15%);
+}
+
+/* Rail — offset by -200px to keep icon top values relative to page-section */
 #proposal-inspo-rail {
   position: absolute;
-  left: 0; top: 0;
+  left: 0; top: -200px;
   width: 499px;
   pointer-events: none;
   will-change: transform;
-  z-index: 1;
 }
 
 /* All inspo icons hidden by default; shown only on proposal */
@@ -805,8 +818,9 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-7 { width:196px; left:119px; top:1212px; transform:rotate(16.23deg); }
 .inspo-8 { width:198px; left:277px; top:1366px; }
 
-/* Top-fade mask — starts at y:200px (below title image), solid cream → fade at y:375px */
+/* Top-fade cream overlay — kept for belt-and-suspenders cover of area above clip */
 #proposal-inspo-top-fade {
+  display: none;   /* clip container + mask handles this now */
   position: absolute;
   left: 0; top: 200px;
   width: 499px;
