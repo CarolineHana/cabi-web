@@ -280,6 +280,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   height:620px;          /* extends slightly into glass panel so text scrolls behind it */
   overflow-y:auto; overflow-x:hidden;
   scrollbar-width:none;
+  z-index:10;
   opacity:0; transform:translateY(8px);
   transition:opacity 0.5s ease 0.28s, transform 0.5s ease 0.28s;
 }
