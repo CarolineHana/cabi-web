@@ -728,8 +728,9 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #projectModal[data-project="08"] #carousel-dots  { margin-top:0px; }
 #projectModal[data-project="06"] #modal-caption  { margin-top:10px; }
 #projectModal[data-project="06"] #carousel-dots  { margin-top:0px; }
-#projectModal[data-project="05"] #modal-caption  { margin-top:10px; }
-#projectModal[data-project="05"] #carousel-dots  { margin-top:0px; }
+#projectModal[data-project="05"] #modal-caption  { margin-top:0px; }
+#projectModal[data-project="05"] #carousel-dots  { margin-top:-10px; }
+#projectModal[data-project="05"] #modal-footnote { margin-bottom:10px; }
 #projectModal[data-project="05"] .card-featured.featured-wide { margin-top:20px; }
 #projectModal[data-project="02"] #modal-caption  { margin-top:10px; }
 #projectModal[data-project="02"] #carousel-dots  { margin-top:0px; }
