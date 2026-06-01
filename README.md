@@ -1,6 +1,6 @@
 # Gabi & Carō Make Cool Things
 
-Joint portfolio site for **Caroline Hana** and **Gabriela Franco**, MDE candidates at Harvard University (Class of 2026).
+Joint portfolio site for **Caroline Hana** and **Gabriela Franco**, MDE candidates at Harvard University (Class of 2027).
 
 ## About
 
