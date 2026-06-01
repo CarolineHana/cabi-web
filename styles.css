@@ -740,6 +740,21 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #projectModal[data-project="01"] .card-featured.featured-wide { margin-top:-30px; }
 #projectModal[data-project="01"] .card-featured[data-src*="img4"] { margin-top:0px; }
 
+/* ── Modal footnote hint ── */
+#modal-footnote {
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size:8px;
+  font-weight:300;
+  letter-spacing:0.10em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,0.28);
+  text-align:center;
+  z-index:2;
+  margin-top:auto;
+  padding-top:4px;
+  pointer-events:none;
+}
+
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
   width:min(86%,1000px);
