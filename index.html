@@ -67,6 +67,7 @@
     <!-- Proposal inspo icons — clipped + scroll-synced only when data-section="proposal" -->
     <div id="proposal-inspo-clip">
       <div id="proposal-inspo-rail">
+        <img src="assets/inspo_icon1 1.png" class="proposal-inspo inspo-0" alt="">
         <img src="assets/inspo_icon2 1.png" class="proposal-inspo inspo-1" alt="">
         <img src="assets/inspo_icon3 1.png" class="proposal-inspo inspo-2" alt="">
         <img src="assets/inspo_icon4 1.png" class="proposal-inspo inspo-3" alt="">
@@ -116,7 +117,7 @@
      PROJECT MODAL — outside #scene so position:fixed
      covers the full viewport correctly
      ══════════════════════════════════════════════ -->
-<div class="modal-overlay" id="projectModal">
+<div class="modal-overlay" id="projectModal" tabindex="-1">
   <div class="modal-box">
 
     <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
@@ -673,6 +674,7 @@
       setInfo(proj);
       $id('projectModal').dataset.project = key;
       $id('projectModal').classList.add('active');
+      $id('projectModal').focus();
     }
 
     /* ── Close modal ──────────────────────────────────────── */
@@ -766,6 +768,17 @@
         e.preventDefault();
         $id('sec-text-container').scrollTop += e.deltaY;
       }, { passive: false });
+
+      /* Carousel arrow-key navigation — attached to the modal so it fires
+         regardless of which child element currently holds focus.
+         Escape is still caught at document level for the section-close chain. */
+      function handleModalKey(e) {
+        if (!$id('projectModal').classList.contains('active')) return;
+        if (focusCardEl) return;            /* a card is expanded — ignore arrows */
+        if (e.key === 'ArrowRight') { e.preventDefault(); advance(); }
+        else if (e.key === 'ArrowLeft')  { e.preventDefault(); retreat(); }
+      }
+      $id('projectModal').addEventListener('keydown', handleModalKey);
 
       /* Escape: collapse focus card → close modal → close section */
       document.addEventListener('keydown', function (e) {
