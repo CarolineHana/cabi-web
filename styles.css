@@ -834,7 +834,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 .inspo-6 { width:223px; left:223px; top:1320px; transform:rotate(-7.44deg); }
 .inspo-7 { width:196px; left:79px;  top:1512px; transform:rotate(16.23deg); }
 .inspo-8 { width:198px; left:237px; top:1686px; }
-.inspo-9 { width:200px; left:22px;  top:1860px; }
+.inspo-9 { width:225px; left:42px;  top:1860px; }
 
 /* Bottom glass overlay for the left inspo column — mirrors #sec-bottom-bar */
 #proposal-inspo-top-fade {

@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(pip3 install *)",
-      "Bash(open *)"
+      "Bash(open *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Calm \\(04\\): add all media, captions, and description *)",
+      "Bash(git push *)",
+      "Bash(ffprobe *)",
+      "Bash(cp /Users/carolinehana/Downloads/cabi_web/projects/04-codecalm/VID2.MOV /Users/carolinehana/Downloads/VID2_ORIGINAL.MOV)",
+      "Bash(ffmpeg -i /Users/carolinehana/Downloads/cabi_web/projects/04-codecalm/VID2.MOV -c:v libx264 -crf 23 -preset slow -maxrate 3000k -bufsize 6000k -c:a aac -b:a 128k -movflags +faststart /Users/carolinehana/Downloads/VID2_compressed.mp4)",
+      "Bash(python3 *)",
+      "Bash(git commit -m 'Calm \\(04\\): compress VID2.MOV → VID2.mp4 \\(126MB→24MB, CRF 23\\) *)",
+      "Bash(sips *)"
     ]
   }
 }
