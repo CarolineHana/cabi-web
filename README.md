@@ -38,4 +38,4 @@ Vanilla HTML, CSS, and JavaScript. No frameworks. Designed at 1728 × 1117 px an
 
 ---
 
-Caroline Hana & Gabriela Franco — Harvard MDE 2026
+Caroline Hana & Gabriela Franco — Harvard MDE 2027
