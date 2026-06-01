@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Large raw video originals (use compressed versions instead)
+projects/03-nara/vid3.mp4
