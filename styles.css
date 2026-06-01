@@ -738,6 +738,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 #projectModal[data-project="01"] #modal-caption  { margin-top:10px; }
 #projectModal[data-project="01"] #carousel-dots  { margin-top:0px; }
 #projectModal[data-project="01"] .card-featured.featured-wide { margin-top:-30px; }
+#projectModal[data-project="01"] .card-featured[data-src*="img4"] { margin-top:0px; }
 
 /* ── Project description — directly below the one-line title ── */
 .modal-desc {
