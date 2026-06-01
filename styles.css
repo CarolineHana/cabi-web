@@ -467,6 +467,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
   border-radius:16px;
   overflow:hidden;
 }
+#projectModal[data-project="05"] .modal-box { height:min(85vh,620px); }
 
 /* ── Peach-tinted inner area ── */
 #modal-inner {
