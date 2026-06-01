@@ -824,16 +824,16 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #page-section[data-section="proposal"] .proposal-inspo { opacity: 1; }
 
-/* Individual icon positions — inspo-0 added at top; all others shifted +200px down */
-.inspo-0 { width:195px; left:172px; top:385px; }
-.inspo-1 { width:200px; left:36px;  top:584px; }
-.inspo-2 { width:215px; left:220px; top:692px; }
-.inspo-3 { width:209px; left:89px;  top:853px; }
-.inspo-4 { width:258px; left:150px; top:982px;  transform:rotate(-17.65deg); }
+/* Individual icon positions — +20px cumulative spacing, all shifted -100px up */
+.inspo-0 { width:195px; left:172px; top:285px; }
+.inspo-1 { width:200px; left:36px;  top:484px; }
+.inspo-2 { width:215px; left:220px; top:632px; }
+.inspo-3 { width:209px; left:89px;  top:813px; }
+.inspo-4 { width:258px; left:150px; top:962px;  transform:rotate(-17.65deg); }
 .inspo-5 { width:149px; left:103px; top:1222px; transform:rotate(14.93deg); }
-.inspo-6 { width:223px; left:223px; top:1300px; transform:rotate(-7.44deg); }
-.inspo-7 { width:196px; left:79px;  top:1472px; transform:rotate(16.23deg); }
-.inspo-8 { width:198px; left:237px; top:1626px; }
+.inspo-6 { width:223px; left:223px; top:1320px; transform:rotate(-7.44deg); }
+.inspo-7 { width:196px; left:79px;  top:1512px; transform:rotate(16.23deg); }
+.inspo-8 { width:198px; left:237px; top:1686px; }
 
 /* Bottom glass overlay for the left inspo column — mirrors #sec-bottom-bar */
 #proposal-inspo-top-fade {
