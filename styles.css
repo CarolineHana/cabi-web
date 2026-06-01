@@ -681,6 +681,7 @@ body.section-active .footer-note { opacity:0; pointer-events:none; }
 }
 #projectModal[data-project="03"] #carousel-dots { margin-top:-13px; }
 #projectModal[data-project="03"] #modal-caption  { margin-top:0px; }
+#projectModal[data-project="03"] .card-featured[data-src*="img2_1"] { margin-top:-20px; }
 .carousel-dot {
   width:4px;
   height:4px;

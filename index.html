@@ -463,6 +463,7 @@
       var fc = document.createElement('div');
       var featuredSrc = currentPhotos[featuredIdx];
       fc.className = 'card-featured' + (isGif(featuredSrc) ? ' featured-gif' : '');
+      fc.dataset.src = featuredSrc;
       var fMedia = makeMediaEl(featuredSrc, true);
       fc.appendChild(fMedia);
       /* Mark videos and landscape images so per-project CSS can target them */
